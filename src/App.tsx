@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
+  Archive,
+  ArchiveRestore,
   ArrowLeft,
   Bookmark,
   Check,
@@ -57,6 +59,7 @@ const STORAGE_KEY = 'archivo-divergente:v1'
 const emptyState: LibraryState = {
   version: 1,
   favorites: [],
+  archived: [],
   recent: [],
   lastResourceId: null,
   progress: {},
@@ -65,6 +68,7 @@ const emptyState: LibraryState = {
     type: 'all',
     tag: 'all',
     favoritesOnly: false,
+    archivedOnly: false,
     viewMode: 'board',
   },
 }
@@ -95,6 +99,7 @@ function loadLibraryState(): LibraryState {
       ...stored,
       filters: { ...emptyState.filters, ...stored.filters },
       progress: stored.progress || {},
+      archived: stored.archived || [],
       recent: stored.recent || [],
     }
   } catch {
@@ -233,6 +238,8 @@ function App() {
     return catalog.resources
       .filter((resource) => {
         const collection = collectionsById.get(resource.collectionId)
+        const isArchived = libraryState.archived.includes(resource.id)
+        if (libraryState.filters.archivedOnly ? !isArchived : isArchived) return false
         if (libraryState.filters.territory !== 'all' && collection?.territoryId !== libraryState.filters.territory) return false
         if (libraryState.filters.type !== 'all' && resource.type !== libraryState.filters.type) return false
         if (libraryState.filters.tag !== 'all' && !resource.tags.includes(libraryState.filters.tag)) return false
@@ -244,7 +251,7 @@ function App() {
         const collectionB = collectionsById.get(b.collectionId)
         return (collectionA?.order || 0) - (collectionB?.order || 0) || a.title.localeCompare(b.title, 'es')
       })
-  }, [catalog, collectionsById, libraryState.favorites, libraryState.filters])
+  }, [catalog, collectionsById, libraryState.archived, libraryState.favorites, libraryState.filters])
 
   const topTags = useMemo(() => {
     if (!catalog) return []
@@ -260,8 +267,9 @@ function App() {
     () => libraryState.recent
       .map((resourceId) => resourcesById.get(resourceId))
       .filter((resource): resource is Resource => Boolean(resource))
+      .filter((resource) => !libraryState.archived.includes(resource.id))
       .slice(0, 10),
-    [libraryState.recent, resourcesById],
+    [libraryState.archived, libraryState.recent, resourcesById],
   )
   const selectedResource = selectedId ? resourcesById.get(selectedId) : undefined
 
@@ -327,6 +335,15 @@ function App() {
       favorites: current.favorites.includes(resourceId)
         ? current.favorites.filter((id) => id !== resourceId)
         : [resourceId, ...current.favorites],
+    }))
+  }
+
+  function toggleArchive(resourceId: string) {
+    updateState((current) => ({
+      ...current,
+      archived: current.archived.includes(resourceId)
+        ? current.archived.filter((id) => id !== resourceId)
+        : [resourceId, ...current.archived],
     }))
   }
 
@@ -448,7 +465,7 @@ function App() {
           <div className="section-heading library-heading">
             <div>
               <p className="eyebrow">La biblioteca viva</p>
-              <h2 id="library-title">Todo lo que has reunido</h2>
+              <h2 id="library-title">{libraryState.filters.archivedOnly ? 'Recursos archivados' : 'Todo lo que has reunido'}</h2>
             </div>
             <div className="view-switch" aria-label="Cambiar vista">
               <button type="button" className={libraryState.filters.viewMode === 'board' ? 'active' : ''} onClick={() => setFilter('viewMode', 'board')} aria-label="Vista de tablero"><Grid2X2 size={17} /></button>
@@ -460,13 +477,14 @@ function App() {
             catalog={catalog}
             filters={libraryState.filters}
             topTags={topTags}
+            archivedCount={libraryState.archived.length}
             open={filtersOpen}
             onFilter={setFilter}
             onReset={() => updateState((current) => ({ ...current, filters: emptyState.filters }))}
           />
 
           <p className="result-count" aria-live="polite">
-            {visibleResources.length} {visibleResources.length === 1 ? 'recurso' : 'recursos'}
+            {visibleResources.length} {visibleResources.length === 1 ? (libraryState.filters.archivedOnly ? 'archivado' : 'recurso') : (libraryState.filters.archivedOnly ? 'archivados' : 'recursos')}
           </p>
 
           {visibleResources.length ? (
@@ -479,19 +497,21 @@ function App() {
                   territory={territoriesById.get(collectionsById.get(resource.collectionId)!.territoryId)!}
                   progress={libraryState.progress[resource.id]}
                   favorite={libraryState.favorites.includes(resource.id)}
+                  archived={libraryState.archived.includes(resource.id)}
                   searchPage={null}
                   index={index}
                   viewMode={libraryState.filters.viewMode}
                   onOpen={(page) => openResource(resource, page)}
                   onFavorite={() => toggleFavorite(resource.id)}
+                  onArchive={() => toggleArchive(resource.id)}
                 />
               ))}
             </div>
           ) : (
             <div className="empty-results">
               <RotateCcw size={25} />
-              <h3>No hay recursos con estos filtros.</h3>
-              <p>Limpia los filtros para volver a ver toda la biblioteca.</p>
+              <h3>{libraryState.filters.archivedOnly ? 'No tienes recursos archivados.' : 'No hay recursos con estos filtros.'}</h3>
+              <p>{libraryState.filters.archivedOnly ? 'Cuando archives un recurso, podrás recuperarlo desde aquí.' : 'Limpia los filtros para volver a ver toda la biblioteca.'}</p>
               <button type="button" onClick={() => updateState((current) => ({ ...current, filters: emptyState.filters }))}>Ver toda la biblioteca</button>
             </div>
           )}
@@ -505,7 +525,7 @@ function App() {
           <p>Una biblioteca personal, viva y en movimiento.</p>
         </div>
         <button type="button" onClick={() => {
-          if (window.confirm('¿Borrar favoritos, recientes y progreso guardado en este dispositivo?')) setLibraryState(emptyState)
+          if (window.confirm('¿Borrar favoritos, archivados, recientes y progreso guardado en este dispositivo?')) setLibraryState(emptyState)
         }}>Borrar progreso local</button>
       </footer>
 
@@ -519,8 +539,10 @@ function App() {
           progress={libraryState.progress[selectedResource.id]}
           initialPage={requestedPage}
           favorite={libraryState.favorites.includes(selectedResource.id)}
+          archived={libraryState.archived.includes(selectedResource.id)}
           onClose={closeResource}
           onFavorite={() => toggleFavorite(selectedResource.id)}
+          onArchive={() => toggleArchive(selectedResource.id)}
           onProgress={saveSelectedProgress}
         />
       )}
@@ -581,15 +603,16 @@ function TerritoryCard({ territory, collections, active, onSelect, index }: {
   )
 }
 
-function FilterBar({ catalog, filters, topTags, open, onFilter, onReset }: {
+function FilterBar({ catalog, filters, topTags, archivedCount, open, onFilter, onReset }: {
   catalog: Catalog
   filters: LibraryState['filters']
   topTags: string[]
+  archivedCount: number
   open: boolean
   onFilter: <K extends keyof LibraryState['filters']>(key: K, value: LibraryState['filters'][K]) => void
   onReset: () => void
 }) {
-  const isFiltered = filters.territory !== 'all' || filters.type !== 'all' || filters.tag !== 'all' || filters.favoritesOnly
+  const isFiltered = filters.territory !== 'all' || filters.type !== 'all' || filters.tag !== 'all' || filters.favoritesOnly || filters.archivedOnly
   return (
     <div className={`filter-bar ${open ? 'filter-bar--open' : ''}`}>
       <div className="filter-scroll">
@@ -609,6 +632,7 @@ function FilterBar({ catalog, filters, topTags, open, onFilter, onReset }: {
           }
         }}><FileText size={14} /> Análisis</button>
         <button type="button" className={filters.favoritesOnly ? 'active' : ''} onClick={() => onFilter('favoritesOnly', !filters.favoritesOnly)}><Bookmark size={14} fill={filters.favoritesOnly ? 'currentColor' : 'none'} /> Favoritos</button>
+        <button type="button" className={filters.archivedOnly ? 'active' : ''} onClick={() => onFilter('archivedOnly', !filters.archivedOnly)}><Archive size={14} /> Archivados ({archivedCount})</button>
       </div>
       {isFiltered && <div className="filter-actions"><button className="reset-filters" type="button" onClick={onReset}>Limpiar filtros <X size={14} /></button></div>}
       <div className="filter-details">
@@ -621,28 +645,31 @@ function FilterBar({ catalog, filters, topTags, open, onFilter, onReset }: {
   )
 }
 
-function ResourceCard({ resource, collection, territory, progress, favorite, searchPage, index, viewMode, onOpen, onFavorite }: {
+function ResourceCard({ resource, collection, territory, progress, favorite, archived, searchPage, index, viewMode, onOpen, onFavorite, onArchive }: {
   resource: Resource
   collection: Collection
   territory: Territory
   progress?: ResourceProgress
   favorite: boolean
+  archived: boolean
   searchPage: number | null
   index: number
   viewMode: 'board' | 'compact'
   onOpen: (page: number | null) => void
   onFavorite: () => void
+  onArchive: () => void
 }) {
   const Icon = typeIcons[resource.type]
   const percent = progressPercent(resource, progress)
   return (
-    <article className={`resource-card accent-${territory.accent} ${resource.thumbnail ? 'has-cover' : ''}`} style={{ '--delay': `${Math.min(index, 12) * 35}ms` } as React.CSSProperties}>
+    <article className={`resource-card accent-${territory.accent} ${resource.thumbnail ? 'has-cover' : ''} ${archived ? 'is-archived' : ''}`} style={{ '--delay': `${Math.min(index, 12) * 35}ms` } as React.CSSProperties}>
       <button type="button" className="resource-card__main" onClick={() => onOpen(searchPage)} aria-label={`Abrir ${resource.title}`}>
         <div className="resource-cover">
           {resource.thumbnail ? <img src={resource.thumbnail} alt="" loading="lazy" /> : (
             <div className="resource-monogram"><Icon size={28} /><span>{collection.title.slice(0, 2)}</span></div>
           )}
           <span className="format-pill"><Icon size={12} /> {resource.isAnalysis ? 'Análisis' : typeLabels[resource.type]}</span>
+          {archived && <span className="archived-pill"><Archive size={12} /> Archivado</span>}
           {searchPage && <span className="page-hit">Coincide en pág. {searchPage}</span>}
         </div>
         <div className="resource-card__copy">
@@ -659,21 +686,24 @@ function ResourceCard({ resource, collection, territory, progress, favorite, sea
       </button>
       <div className="resource-actions">
         <button type="button" onClick={onFavorite} aria-label={favorite ? `Quitar ${resource.title} de favoritos` : `Guardar ${resource.title} en favoritos`}><Bookmark size={16} fill={favorite ? 'currentColor' : 'none'} /></button>
+        <button type="button" onClick={onArchive} aria-label={archived ? `Restaurar ${resource.title}` : `Archivar ${resource.title}`} title={archived ? 'Restaurar' : 'Archivar'}>{archived ? <ArchiveRestore size={16} /> : <Archive size={16} />}</button>
         <a href={resource.downloadUrl} download={resource.isAnalysis ? `${resource.id}.md` : undefined} aria-label={`Descargar ${resource.title}`} title="Descargar"><Download size={16} /></a>
       </div>
     </article>
   )
 }
 
-function ResourceViewer({ resource, collection, relatedPdf, progress, initialPage, favorite, onClose, onFavorite, onProgress }: {
+function ResourceViewer({ resource, collection, relatedPdf, progress, initialPage, favorite, archived, onClose, onFavorite, onArchive, onProgress }: {
   resource: Resource
   collection: Collection
   relatedPdf?: Resource
   progress?: ResourceProgress
   initialPage: number | null
   favorite: boolean
+  archived: boolean
   onClose: () => void
   onFavorite: () => void
+  onArchive: () => void
   onProgress: (update: Partial<ResourceProgress>) => void
 }) {
   const viewerRef = useRef<HTMLElement>(null)
@@ -757,6 +787,7 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
         <button type="button" className="viewer-back" onClick={leaveViewer}><ArrowLeft size={18} /> <span>Volver a la biblioteca</span></button>
         <div className="viewer-actions">
           <button type="button" onClick={onFavorite} aria-label={favorite ? 'Quitar de favoritos' : 'Guardar en favoritos'}><Bookmark size={17} fill={favorite ? 'currentColor' : 'none'} /></button>
+          <button type="button" onClick={onArchive} aria-label={archived ? 'Restaurar recurso' : 'Archivar recurso'} title={archived ? 'Restaurar' : 'Archivar'}>{archived ? <ArchiveRestore size={17} /> : <Archive size={17} />}</button>
           <a href={resource.downloadUrl} download={resource.isAnalysis ? `${resource.id}.md` : undefined} aria-label={`Descargar ${resource.title}`} title="Descargar original"><Download size={17} /></a>
           <button type="button" className="viewer-fullscreen" onClick={() => void toggleImmersive()} aria-label={immersive ? 'Salir de pantalla completa' : 'Pantalla completa horizontal'} title={immersive ? 'Salir de pantalla completa' : 'Pantalla completa horizontal'}>
             {immersive ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
@@ -768,7 +799,7 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
       <div className="viewer-titlebar">
         <span>{collection.title} · {resource.isAnalysis ? 'Análisis Markdown' : typeLabels[resource.type]}</span>
         <h2>{resource.title}</h2>
-        <div>{resource.tags.slice(0, 4).map((tag) => <span key={tag}>#{tag}</span>)}</div>
+        <div>{archived && <span className="is-archived-tag"><Archive size={11} /> Archivado</span>}{resource.tags.slice(0, 4).map((tag) => <span key={tag}>#{tag}</span>)}</div>
       </div>
       <div className={`viewer-stage viewer-stage--${actualResource.type}`}>
         {resource.type === 'document' && relatedPdf && <p className="document-note"><Check size={15} /> Mostrando la versión PDF. El documento editable está disponible en el icono de descarga.</p>}

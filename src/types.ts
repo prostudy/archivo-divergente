@@ -80,6 +80,7 @@ export interface ResourceProgress {
 export interface LibraryState {
   version: 1
   favorites: string[]
+  archived: string[]
   recent: string[]
   lastResourceId: string | null
   progress: Record<string, ResourceProgress>
@@ -88,6 +89,7 @@ export interface LibraryState {
     type: string
     tag: string
     favoritesOnly: boolean
+    archivedOnly: boolean
     viewMode: 'board' | 'compact'
   }
 }
