@@ -13,9 +13,12 @@ import {
   Image as ImageIcon,
   LayoutList,
   Library,
+  Maximize2,
+  Minimize2,
   Pause,
   Play,
   RotateCcw,
+  RotateCw,
   Search,
   SlidersHorizontal,
   Sparkles,
@@ -37,6 +40,20 @@ import type {
   SearchEntry,
   Territory,
 } from './types'
+
+type FullscreenElement = HTMLElement & {
+  webkitRequestFullscreen?: () => Promise<void> | void
+}
+
+type FullscreenDocument = Document & {
+  webkitFullscreenElement?: Element | null
+  webkitExitFullscreen?: () => Promise<void> | void
+}
+
+type LockableOrientation = ScreenOrientation & {
+  lock?: (orientation: 'landscape') => Promise<void>
+  unlock?: () => void
+}
 
 const STORAGE_KEY = 'archivo-divergente:v1'
 const emptyState: LibraryState = {
@@ -333,6 +350,10 @@ function App() {
   }
 
   function closeResource() {
+    const fullscreenDocument = document as FullscreenDocument
+    ;(screen.orientation as LockableOrientation | undefined)?.unlock?.()
+    if (document.fullscreenElement) void document.exitFullscreen().catch(() => undefined)
+    else if (fullscreenDocument.webkitFullscreenElement) void fullscreenDocument.webkitExitFullscreen?.()
     const params = new URLSearchParams(window.location.search)
     params.delete('resource')
     params.delete('page')
@@ -703,6 +724,8 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
   onProgress: (update: Partial<ResourceProgress>) => void
 }) {
   const viewerRef = useRef<HTMLElement>(null)
+  const [immersive, setImmersive] = useState(false)
+  const [orientationHint, setOrientationHint] = useState('')
   const actualResource = resource.type === 'document' && relatedPdf ? relatedPdf : resource
 
   useEffect(() => {
@@ -725,16 +748,70 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
     return () => document.removeEventListener('keydown', trapFocus)
   }, [resource.id])
 
+  useEffect(() => {
+    const onFullscreenChange = () => {
+      const fullscreenDocument = document as FullscreenDocument
+      if (!document.fullscreenElement && !fullscreenDocument.webkitFullscreenElement) {
+        setImmersive(false)
+        ;(screen.orientation as LockableOrientation | undefined)?.unlock?.()
+      }
+    }
+    document.addEventListener('fullscreenchange', onFullscreenChange)
+    document.addEventListener('webkitfullscreenchange', onFullscreenChange)
+    return () => {
+      document.removeEventListener('fullscreenchange', onFullscreenChange)
+      document.removeEventListener('webkitfullscreenchange', onFullscreenChange)
+    }
+  }, [])
+
+  async function toggleImmersive() {
+    const fullscreenDocument = document as FullscreenDocument
+    const fullscreenElement = document.fullscreenElement || fullscreenDocument.webkitFullscreenElement
+    if (immersive || fullscreenElement) {
+      setImmersive(false)
+      ;(screen.orientation as LockableOrientation | undefined)?.unlock?.()
+      if (document.fullscreenElement) await document.exitFullscreen().catch(() => undefined)
+      else if (fullscreenDocument.webkitFullscreenElement) await fullscreenDocument.webkitExitFullscreen?.()
+      return
+    }
+
+    setImmersive(true)
+    setOrientationHint('')
+    const element = viewerRef.current as FullscreenElement | null
+    try {
+      if (element?.requestFullscreen) await element.requestFullscreen()
+      else if (element?.webkitRequestFullscreen) await element.webkitRequestFullscreen()
+      else throw new Error('fullscreen-not-supported')
+      const orientation = screen.orientation as LockableOrientation | undefined
+      if (orientation?.lock) await orientation.lock('landscape')
+      else setOrientationHint('Gira tu teléfono para verlo en horizontal.')
+    } catch {
+      setOrientationHint('Vista ampliada activa. Gira tu teléfono para usarla en horizontal.')
+    }
+  }
+
+  function leaveViewer() {
+    const fullscreenDocument = document as FullscreenDocument
+    ;(screen.orientation as LockableOrientation | undefined)?.unlock?.()
+    if (document.fullscreenElement) void document.exitFullscreen().catch(() => undefined)
+    else if (fullscreenDocument.webkitFullscreenElement) void fullscreenDocument.webkitExitFullscreen?.()
+    onClose()
+  }
+
   return (
-    <aside className="resource-viewer" ref={viewerRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={`Sala de lectura: ${resource.title}`}>
+    <aside className={`resource-viewer ${immersive ? 'is-immersive' : ''}`} ref={viewerRef} tabIndex={-1} role="dialog" aria-modal="true" aria-label={`Sala de lectura: ${resource.title}`}>
       <header className="viewer-header">
-        <button type="button" className="viewer-back" onClick={onClose}><ArrowLeft size={18} /> <span>Volver a la biblioteca</span></button>
+        <button type="button" className="viewer-back" onClick={leaveViewer}><ArrowLeft size={18} /> <span>Volver a la biblioteca</span></button>
         <div className="viewer-actions">
           <button type="button" onClick={onFavorite} aria-label={favorite ? 'Quitar de favoritos' : 'Guardar en favoritos'}><Bookmark size={17} fill={favorite ? 'currentColor' : 'none'} /></button>
           <a href={resource.downloadUrl} aria-label={`Descargar ${resource.title}`} title="Descargar original"><Download size={17} /></a>
-          <button className="viewer-close" type="button" onClick={onClose} aria-label="Cerrar recurso"><X size={18} /></button>
+          <button type="button" className="viewer-fullscreen" onClick={() => void toggleImmersive()} aria-label={immersive ? 'Salir de pantalla completa' : 'Pantalla completa horizontal'} title={immersive ? 'Salir de pantalla completa' : 'Pantalla completa horizontal'}>
+            {immersive ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
+          </button>
+          <button className="viewer-close" type="button" onClick={leaveViewer} aria-label="Cerrar recurso"><X size={18} /></button>
         </div>
       </header>
+      {orientationHint && <p className="viewer-orientation-hint" role="status"><RotateCw size={15} /> {orientationHint}</p>}
       <div className="viewer-titlebar">
         <span>{collection.title} · {typeLabels[resource.type]}</span>
         <h2>{resource.title}</h2>
@@ -758,12 +835,14 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
 }
 
 function PdfViewer({ resource, initialPage, onProgress }: { resource: Resource; initialPage: number; onProgress: (update: Partial<ResourceProgress>) => void }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const renderTaskRef = useRef<{ cancel: () => void } | null>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const pageRefs = useRef(new Map<number, HTMLDivElement>())
+  const restoredPage = useRef(false)
   const [documentProxy, setDocumentProxy] = useState<PDFDocumentProxy | null>(null)
   const [page, setPage] = useState(initialPage)
   const [pageCount, setPageCount] = useState(resource.pageCount || 0)
   const [zoom, setZoom] = useState(1)
+  const [pageRatio, setPageRatio] = useState(1 / 1.414)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -778,7 +857,13 @@ function PdfViewer({ resource, initialPage, onProgress }: { resource: Resource; 
       if (!active) return
       setDocumentProxy(pdf)
       setPageCount(pdf.numPages)
-      setPage(Math.min(Math.max(initialPage, 1), pdf.numPages))
+      const restoredPage = Math.min(Math.max(initialPage, 1), pdf.numPages)
+      setPage(restoredPage)
+      void pdf.getPage(restoredPage).then((pdfPage) => {
+        if (!active) return
+        const viewport = pdfPage.getViewport({ scale: 1 })
+        setPageRatio(viewport.width / viewport.height)
+      })
       setLoading(false)
     }).catch(() => {
       if (!active) return
@@ -790,49 +875,155 @@ function PdfViewer({ resource, initialPage, onProgress }: { resource: Resource; 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [resource.id, resource.url])
 
-  useEffect(() => {
-    if (!documentProxy || !canvasRef.current) return
-    let active = true
-    documentProxy.getPage(page).then((pdfPage) => {
-      if (!active || !canvasRef.current) return
-      const viewport = pdfPage.getViewport({ scale: zoom * 1.35 })
-      const ratio = Math.min(window.devicePixelRatio || 1, 2)
-      const canvas = canvasRef.current
-      const context = canvas.getContext('2d')
-      if (!context) return
-      canvas.width = viewport.width * ratio
-      canvas.height = viewport.height * ratio
-      canvas.style.aspectRatio = `${viewport.width} / ${viewport.height}`
-      renderTaskRef.current?.cancel()
-      const task = pdfPage.render({ canvasContext: context, viewport, transform: ratio === 1 ? undefined : [ratio, 0, 0, ratio, 0, 0] })
-      renderTaskRef.current = task
-      return task.promise
-    }).catch((reason) => {
-      if (reason?.name !== 'RenderingCancelledException') setError('Esta página no pudo renderizarse.')
+  const goToPage = useCallback((target: number) => {
+    const nextPage = Math.min(Math.max(target, 1), pageCount || 1)
+    setPage(nextPage)
+    onProgress({ page: nextPage, pageCount })
+    const element = pageRefs.current.get(nextPage)
+    if (element && scrollRef.current) scrollRef.current.scrollTo({ top: Math.max(0, element.offsetTop - 8), behavior: 'smooth' })
+  }, [onProgress, pageCount])
+
+  const markVisible = useCallback((visiblePage: number) => {
+    setPage((current) => {
+      if (current === visiblePage) return current
+      onProgress({ page: visiblePage, pageCount })
+      return visiblePage
     })
-    onProgress({ page, pageCount })
-    return () => { active = false; renderTaskRef.current?.cancel() }
-  }, [documentProxy, onProgress, page, pageCount, zoom])
+  }, [onProgress, pageCount])
+
+  const registerPage = useCallback((pageNumber: number, element: HTMLDivElement | null) => {
+    if (element) pageRefs.current.set(pageNumber, element)
+    else pageRefs.current.delete(pageNumber)
+  }, [])
+
+  useEffect(() => {
+    if (!documentProxy || !pageCount || restoredPage.current) return
+    restoredPage.current = true
+    const frame = window.requestAnimationFrame(() => {
+      const element = pageRefs.current.get(page)
+      if (element && scrollRef.current) scrollRef.current.scrollTo({ top: Math.max(0, element.offsetTop - 8), behavior: 'auto' })
+      onProgress({ page, pageCount })
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [documentProxy, onProgress, page, pageCount])
 
   if (error) return <ViewerError message={error} url={resource.url} />
   return (
     <div className="pdf-viewer">
       <div className="pdf-toolbar">
         <div>
-          <button type="button" onClick={() => setPage((value) => Math.max(1, value - 1))} disabled={page <= 1} aria-label="Página anterior"><ChevronLeft size={18} /></button>
+          <button type="button" onClick={() => goToPage(page - 1)} disabled={page <= 1} aria-label="Página anterior"><ChevronLeft size={18} /></button>
           <span>Página <strong>{page}</strong> de {pageCount || '…'}</span>
-          <button type="button" onClick={() => setPage((value) => Math.min(pageCount, value + 1))} disabled={!pageCount || page >= pageCount} aria-label="Página siguiente"><ChevronRight size={18} /></button>
+          <button type="button" onClick={() => goToPage(page + 1)} disabled={!pageCount || page >= pageCount} aria-label="Página siguiente"><ChevronRight size={18} /></button>
         </div>
+        <small className="pdf-scroll-hint">Desliza entre páginas</small>
         <div>
           <button type="button" onClick={() => setZoom((value) => Math.max(.7, value - .15))} aria-label="Alejar"><ZoomOut size={17} /></button>
           <span>{Math.round(zoom * 100)}%</span>
           <button type="button" onClick={() => setZoom((value) => Math.min(1.8, value + .15))} aria-label="Acercar"><ZoomIn size={17} /></button>
         </div>
       </div>
-      <div className="pdf-canvas-wrap">
+      <div className="pdf-pages-scroll" ref={scrollRef}>
         {loading && <div className="viewer-loading"><span /> Preparando las páginas…</div>}
-        <canvas ref={canvasRef} aria-label={`Página ${page} de ${resource.title}`} />
+        {documentProxy && (
+          <div className="pdf-pages">
+            {Array.from({ length: pageCount }, (_, index) => index + 1).map((pageNumber) => (
+              <PdfPageCanvas
+                key={pageNumber}
+                documentProxy={documentProxy}
+                pageNumber={pageNumber}
+                zoom={zoom}
+                defaultRatio={pageRatio}
+                scrollRoot={scrollRef}
+                onVisible={markVisible}
+                registerPage={registerPage}
+                title={resource.title}
+              />
+            ))}
+          </div>
+        )}
       </div>
+    </div>
+  )
+}
+
+function PdfPageCanvas({ documentProxy, pageNumber, zoom, defaultRatio, scrollRoot, onVisible, registerPage, title }: {
+  documentProxy: PDFDocumentProxy
+  pageNumber: number
+  zoom: number
+  defaultRatio: number
+  scrollRoot: React.RefObject<HTMLDivElement | null>
+  onVisible: (page: number) => void
+  registerPage: (page: number, element: HTMLDivElement | null) => void
+  title: string
+}) {
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const renderTaskRef = useRef<{ cancel: () => void } | null>(null)
+  const [shouldRender, setShouldRender] = useState(false)
+  const [ratio, setRatio] = useState(defaultRatio)
+
+  useEffect(() => {
+    const wrapper = wrapperRef.current
+    if (!wrapper) return
+    registerPage(pageNumber, wrapper)
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) setShouldRender(true)
+        if (entry.intersectionRatio >= .22) onVisible(pageNumber)
+      }
+    }, { root: scrollRoot.current, rootMargin: '700px 0px', threshold: [0, .1, .22, .6] })
+    observer.observe(wrapper)
+    return () => {
+      observer.disconnect()
+      registerPage(pageNumber, null)
+    }
+  }, [onVisible, pageNumber, registerPage, scrollRoot])
+
+  useEffect(() => {
+    if (!shouldRender || !canvasRef.current) return
+    let active = true
+    documentProxy.getPage(pageNumber).then((pdfPage) => {
+      if (!active || !canvasRef.current) return
+      const viewport = pdfPage.getViewport({ scale: 1.35 * zoom })
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2)
+      const canvas = canvasRef.current
+      const context = canvas.getContext('2d')
+      if (!context) return
+      setRatio(viewport.width / viewport.height)
+      canvas.width = Math.floor(viewport.width * pixelRatio)
+      canvas.height = Math.floor(viewport.height * pixelRatio)
+      renderTaskRef.current?.cancel()
+      const task = pdfPage.render({
+        canvasContext: context,
+        viewport,
+        transform: pixelRatio === 1 ? undefined : [pixelRatio, 0, 0, pixelRatio, 0, 0],
+      })
+      renderTaskRef.current = task
+      return task.promise
+    }).catch((reason) => {
+      if (reason?.name !== 'RenderingCancelledException') setShouldRender(false)
+    })
+    return () => {
+      active = false
+      renderTaskRef.current?.cancel()
+    }
+  }, [documentProxy, pageNumber, shouldRender, zoom])
+
+  return (
+    <div
+      className="pdf-page"
+      ref={wrapperRef}
+      style={{
+        aspectRatio: String(ratio),
+        width: `${zoom * 100}%`,
+        maxWidth: `${960 * zoom}px`,
+        marginInline: zoom <= 1 ? 'auto' : '0',
+      }}
+      data-page={pageNumber}
+    >
+      <canvas ref={canvasRef} aria-label={`Página ${pageNumber} de ${title}`} />
+      {!shouldRender && <span className="pdf-page-number">{pageNumber}</span>}
     </div>
   )
 }
@@ -897,7 +1088,7 @@ function MediaViewer({ kind, resource, progress, onProgress }: {
   return (
     <div className={`media-viewer media-viewer--${kind}`}>
       {kind === 'video' ? (
-        <video ref={mediaRef as React.RefObject<HTMLVideoElement>} src={resource.url} preload="metadata" playsInline onLoadedMetadata={onLoadedMetadata} onTimeUpdate={onTimeUpdate} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setError(true)} />
+        <video ref={mediaRef as React.RefObject<HTMLVideoElement>} src={resource.url} preload="metadata" playsInline controls controlsList="nodownload" onLoadedMetadata={onLoadedMetadata} onTimeUpdate={onTimeUpdate} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setError(true)} />
       ) : (
         <audio ref={mediaRef as React.RefObject<HTMLAudioElement>} src={resource.url} preload="metadata" onLoadedMetadata={onLoadedMetadata} onTimeUpdate={onTimeUpdate} onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => setError(true)} />
       )}
