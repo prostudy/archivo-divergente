@@ -495,7 +495,8 @@ function App() {
             </div>
             <p>{catalog.collections.length} colecciones · {catalog.resources.length} recursos</p>
           </div>
-          <div className="territory-grid">
+          <p className="territory-carousel-hint" aria-hidden="true">Desliza para explorar <span>→</span></p>
+          <div className="territory-grid" role="group" aria-label="Carrusel de territorios de conocimiento">
             {catalog.territories.map((territory, index) => (
               <TerritoryCard
                 key={territory.id}
@@ -672,13 +673,13 @@ function FilterBar({ catalog, filters, topTags, open, onFilter, onReset }: {
         ))}
         <button type="button" className={filters.favoritesOnly ? 'active' : ''} onClick={() => onFilter('favoritesOnly', !filters.favoritesOnly)}><Bookmark size={14} fill={filters.favoritesOnly ? 'currentColor' : 'none'} /> Favoritos</button>
       </div>
+      {isFiltered && <div className="filter-actions"><button className="reset-filters" type="button" onClick={onReset}>Limpiar filtros <X size={14} /></button></div>}
       <div className="filter-details">
         <span>Etiquetas</span>
         <div className="pdf-toolbar__zoom">
           {topTags.map((tag) => <button type="button" key={tag} className={filters.tag === tag ? 'active' : ''} onClick={() => onFilter('tag', filters.tag === tag ? 'all' : tag)}>{tag}</button>)}
         </div>
       </div>
-      {isFiltered && <button className="reset-filters" type="button" onClick={onReset}>Limpiar filtros <X size={14} /></button>}
     </div>
   )
 }

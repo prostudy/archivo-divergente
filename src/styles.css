@@ -148,6 +148,7 @@
   .progress-track span, .card-progress span { display: block; height: 100%; border-radius: inherit; background: var(--sage); }
 
   .territories-section { margin-bottom: 122px; }
+  .territory-carousel-hint { display: none; }
   .territory-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .territory-card { min-height: 310px; padding: 25px; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; text-align: left; border-radius: 23px; border: 1px solid var(--line); background: rgba(255, 253, 248, .62); animation: fade-up 520ms var(--delay) both; transition: transform 220ms cubic-bezier(.22, 1, .36, 1), border 180ms ease, background 180ms ease; }
   .territory-card::after { content: ""; position: absolute; width: 170px; height: 170px; right: -82px; top: -82px; border-radius: 50%; background: rgba(126, 155, 136, .16); transition: transform 400ms ease; }
@@ -182,7 +183,9 @@
   .filter-details > div { display: flex; flex-wrap: wrap; gap: 7px; }
   .filter-details button { min-height: 31px; padding: 6px 10px; }
   .filter-bar--open .filter-details { max-height: 180px; padding-top: 14px; opacity: 1; }
-  .reset-filters { position: absolute; right: 0; top: -42px; display: flex; align-items: center; gap: 5px; background: transparent; color: #7a6e66; font-size: .7rem; }
+  .filter-actions { margin-top: 10px; display: flex; justify-content: flex-end; }
+  .reset-filters { min-height: 34px; padding: 7px 11px; display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(146, 95, 76, .24); border-radius: 99px; color: #825c4e; background: rgba(193, 135, 111, .09); font-size: .68rem; transition: border 160ms ease, color 160ms ease, background 160ms ease; }
+  .reset-filters:hover { border-color: #825c4e; color: #fff; background: #825c4e; }
   .result-count { margin: 18px 0; color: #7d857f; font-size: .7rem; }
 
   .resource-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; }
@@ -366,8 +369,24 @@
     .continue-visual { min-height: 190px; max-height: 230px; }
     .continue-copy { padding: 25px 22px 23px; }
     .continue-copy h3 { font-size: 1.9rem; }
-    .territory-grid { grid-template-columns: 1fr; gap: 10px; }
-    .territory-card { min-height: 240px; }
+    .territory-carousel-hint { margin: -18px 0 13px; display: flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: .68rem; }
+    .territory-carousel-hint span { color: var(--sage-deep); font-size: 1rem; }
+    .territory-grid {
+      width: calc(100% + 40px);
+      margin-inline: -20px;
+      padding: 4px 20px 18px;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 20px;
+      scrollbar-width: none;
+      touch-action: pan-x pan-y;
+    }
+    .territory-grid::-webkit-scrollbar { display: none; }
+    .territory-card { flex: 0 0 min(82vw, 330px); min-height: 270px; scroll-snap-align: start; scroll-snap-stop: always; }
+    .territory-card:hover, .territory-card.active { transform: none; }
     .territory-eyebrow { margin-top: 28px; }
     .library-heading { align-items: end; }
     .resource-grid, .resource-grid--compact { grid-template-columns: 1fr; gap: 11px; }
