@@ -554,7 +554,7 @@ function App() {
 
       <footer className="site-footer" aria-hidden={Boolean(selectedResource)}>
         <LibraryMark />
-        <div>
+        <div className="pdf-toolbar__pagination">
           <strong>Archivo Divergente</strong>
           <p>Una biblioteca personal, viva y en movimiento.</p>
         </div>
@@ -659,7 +659,7 @@ function FilterBar({ catalog, filters, topTags, open, onFilter, onReset }: {
       </div>
       <div className="filter-details">
         <span>Etiquetas</span>
-        <div>
+        <div className="pdf-toolbar__zoom">
           {topTags.map((tag) => <button type="button" key={tag} className={filters.tag === tag ? 'active' : ''} onClick={() => onFilter('tag', filters.tag === tag ? 'all' : tag)}>{tag}</button>)}
         </div>
       </div>
