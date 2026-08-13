@@ -34,7 +34,7 @@ const categoryMetadata = readdirSync(root, { withFileTypes: true })
   .filter((entry) => entry.isDirectory())
   .flatMap((entry) => ['descripcion.md', 'recursos.yml'].map((file) => join(entry.name, file)))
   .filter((path) => existsSync(join(root, path)))
-const generated = ['taxonomy.yml', 'public/catalog.json', 'public/search-index.json', 'public/thumbs']
+const generated = ['taxonomy.yml', 'public/catalog.json', 'public/search-index.json', 'public/thumbs', 'public/analisis']
 
 run('git', ['add', '--', ...generated, ...categoryMetadata])
 run('git', ['commit', '-m', `content: actualizar Archivo Divergente ${new Date().toISOString().slice(0, 10)}`])

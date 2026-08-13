@@ -671,6 +671,13 @@ function FilterBar({ catalog, filters, topTags, open, onFilter, onReset }: {
         {(['pdf', 'audio', 'video', 'image', 'text'] as ResourceType[]).map((type) => (
           <button key={type} type="button" className={filters.type === type ? 'active' : ''} onClick={() => onFilter('type', filters.type === type ? 'all' : type)}>{typeLabels[type]}</button>
         ))}
+        <button type="button" className={filters.tag === 'análisis' ? 'active' : ''} onClick={() => {
+          if (filters.tag === 'análisis') onFilter('tag', 'all')
+          else {
+            onFilter('type', 'all')
+            onFilter('tag', 'análisis')
+          }
+        }}><FileText size={14} /> Análisis</button>
         <button type="button" className={filters.favoritesOnly ? 'active' : ''} onClick={() => onFilter('favoritesOnly', !filters.favoritesOnly)}><Bookmark size={14} fill={filters.favoritesOnly ? 'currentColor' : 'none'} /> Favoritos</button>
       </div>
       {isFiltered && <div className="filter-actions"><button className="reset-filters" type="button" onClick={onReset}>Limpiar filtros <X size={14} /></button></div>}
@@ -705,7 +712,7 @@ function ResourceCard({ resource, collection, territory, progress, favorite, sea
           {resource.thumbnail ? <img src={resource.thumbnail} alt="" loading="lazy" /> : (
             <div className="resource-monogram"><Icon size={28} /><span>{collection.title.slice(0, 2)}</span></div>
           )}
-          <span className="format-pill"><Icon size={12} /> {typeLabels[resource.type]}</span>
+          <span className="format-pill"><Icon size={12} /> {resource.isAnalysis ? 'Análisis' : typeLabels[resource.type]}</span>
           {searchPage && <span className="page-hit">Coincide en pág. {searchPage}</span>}
         </div>
         <div className="resource-card__copy">
@@ -722,7 +729,7 @@ function ResourceCard({ resource, collection, territory, progress, favorite, sea
       </button>
       <div className="resource-actions">
         <button type="button" onClick={onFavorite} aria-label={favorite ? `Quitar ${resource.title} de favoritos` : `Guardar ${resource.title} en favoritos`}><Bookmark size={16} fill={favorite ? 'currentColor' : 'none'} /></button>
-        <a href={resource.downloadUrl} aria-label={`Descargar ${resource.title}`} title="Descargar"><Download size={16} /></a>
+        <a href={resource.downloadUrl} download={resource.isAnalysis ? `${resource.id}.md` : undefined} aria-label={`Descargar ${resource.title}`} title="Descargar"><Download size={16} /></a>
       </div>
     </article>
   )
@@ -820,7 +827,7 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
         <button type="button" className="viewer-back" onClick={leaveViewer}><ArrowLeft size={18} /> <span>Volver a la biblioteca</span></button>
         <div className="viewer-actions">
           <button type="button" onClick={onFavorite} aria-label={favorite ? 'Quitar de favoritos' : 'Guardar en favoritos'}><Bookmark size={17} fill={favorite ? 'currentColor' : 'none'} /></button>
-          <a href={resource.downloadUrl} aria-label={`Descargar ${resource.title}`} title="Descargar original"><Download size={17} /></a>
+          <a href={resource.downloadUrl} download={resource.isAnalysis ? `${resource.id}.md` : undefined} aria-label={`Descargar ${resource.title}`} title="Descargar original"><Download size={17} /></a>
           <button type="button" className="viewer-fullscreen" onClick={() => void toggleImmersive()} aria-label={immersive ? 'Salir de pantalla completa' : 'Pantalla completa horizontal'} title={immersive ? 'Salir de pantalla completa' : 'Pantalla completa horizontal'}>
             {immersive ? <Minimize2 size={17} /> : <Maximize2 size={17} />}
           </button>
@@ -829,7 +836,7 @@ function ResourceViewer({ resource, collection, relatedPdf, progress, initialPag
       </header>
       {orientationHint && <p className="viewer-orientation-hint" role="status"><RotateCw size={15} /> {orientationHint}</p>}
       <div className="viewer-titlebar">
-        <span>{collection.title} · {typeLabels[resource.type]}</span>
+        <span>{collection.title} · {resource.isAnalysis ? 'Análisis Markdown' : typeLabels[resource.type]}</span>
         <h2>{resource.title}</h2>
         <div>{resource.tags.slice(0, 4).map((tag) => <span key={tag}>#{tag}</span>)}</div>
       </div>

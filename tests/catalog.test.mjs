@@ -10,7 +10,7 @@ const searchIndex = JSON.parse(readFileSync(join(root, 'public/search-index.json
 test('el catálogo contiene territorios, colecciones y recursos únicos', () => {
   assert.equal(catalog.territories.length, 4)
   assert.equal(catalog.collections.length, 14)
-  assert.ok(catalog.resources.length >= 59)
+  assert.ok(catalog.resources.length >= 73)
   assert.equal(new Set(catalog.resources.map((resource) => resource.id)).size, catalog.resources.length)
 })
 
@@ -18,9 +18,27 @@ test('cada recurso pertenece a una colección y usa URLs web seguras', () => {
   const collectionIds = new Set(catalog.collections.map((collection) => collection.id))
   for (const resource of catalog.resources) {
     assert.ok(collectionIds.has(resource.collectionId), `${resource.id} no tiene colección`)
+    if (resource.isAnalysis) {
+      assert.match(resource.url, /^\.\/analisis\/[a-z0-9_-]+\/descripcion\.md$/)
+      assert.equal(resource.downloadUrl, resource.url)
+      continue
+    }
     assert.match(resource.url, /^https:\/\/agilpm\.com\/conocimiento\//)
     assert.equal(resource.url.includes(' '), false, `${resource.id} contiene espacios sin codificar`)
     assert.match(resource.downloadUrl, /^https:\/\/agilpm\.com\/conocimiento\/download\.php\?path=/)
+  }
+})
+
+test('cada colección publica su descripción como un análisis Markdown independiente', () => {
+  const analyses = catalog.resources.filter((resource) => resource.isAnalysis)
+  assert.equal(analyses.length, catalog.collections.length)
+  assert.equal(new Set(analyses.map((resource) => resource.collectionId)).size, catalog.collections.length)
+  for (const analysis of analyses) {
+    assert.equal(analysis.filename, 'descripcion.md')
+    assert.equal(analysis.mime, 'text/markdown')
+    assert.ok(analysis.textContent.startsWith('# Análisis de '))
+    assert.equal(/\n\n[.,;:!?]\s/.test(analysis.textContent), false, `${analysis.id} conserva puntuación separada`)
+    assert.ok(analysis.tags.includes('análisis'))
   }
 })
 

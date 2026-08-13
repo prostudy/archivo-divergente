@@ -39,6 +39,7 @@ export interface Resource {
   textContent: string | null
   relatedPdf: string | null
   hash: string
+  isAnalysis: boolean
 }
 
 export interface Catalog {

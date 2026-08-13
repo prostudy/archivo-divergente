@@ -10,7 +10,7 @@ npm run catalog
 npm run dev
 ```
 
-El catálogo se genera a partir de las carpetas existentes. `taxonomy.yml` controla los cuatro territorios y los nombres de las colecciones. Cada `recursos.yml` conserva los identificadores, títulos y tags editables de sus archivos.
+El catálogo se genera a partir de las carpetas existentes. `taxonomy.yml` controla los cuatro territorios y los nombres de las colecciones. Cada `recursos.yml` conserva los identificadores, títulos y tags editables de sus archivos. Cada `descripcion.md` se procesa como un análisis Markdown independiente, consultable dentro de su colección y mediante el filtro **Análisis**.
 
 ## Agregar contenido
 

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-13T18:13:55.052Z",
+  "generatedAt": "2026-08-13T21:15:27.994Z",
   "site": {
     "title": "Archivo Divergente",
     "tagline": "Ideas para volver a lo que importa",
@@ -55,7 +55,7 @@
         "calma"
       ],
       "order": 1,
-      "resourceCount": 7
+      "resourceCount": 8
     },
     {
       "id": "preocupacion",
@@ -70,7 +70,7 @@
         "bienestar"
       ],
       "order": 2,
-      "resourceCount": 3
+      "resourceCount": 4
     },
     {
       "id": "pick_yourself",
@@ -85,7 +85,7 @@
         "Seth Godin"
       ],
       "order": 3,
-      "resourceCount": 3
+      "resourceCount": 4
     },
     {
       "id": "ser_tu_mismo",
@@ -100,21 +100,21 @@
         "límites"
       ],
       "order": 4,
-      "resourceCount": 2
+      "resourceCount": 3
     },
     {
       "id": "reflexiones",
       "title": "Reflexiones",
       "territoryId": "vida-agencia",
-      "description": "",
-      "summary": "Notas y recursos de reflexiones.",
+      "description": "Reflexiones breves sobre las decisiones que hacen posibles los momentos que desde fuera parecen suerte. Esta colección conecta la planeación consciente con la vida personal, la familia y los negocios: elegir una fecha, prepararse y estar presente cuando finalmente llega la oportunidad.",
+      "summary": "Reflexiones breves sobre las decisiones que hacen posibles los momentos que desde fuera parecen suerte.",
       "tags": [
         "ideas",
         "notas",
         "contemplación"
       ],
       "order": 5,
-      "resourceCount": 1
+      "resourceCount": 2
     },
     {
       "id": "crear_negocios",
@@ -129,7 +129,7 @@
         "valor"
       ],
       "order": 1,
-      "resourceCount": 16
+      "resourceCount": 17
     },
     {
       "id": "freelance",
@@ -144,7 +144,7 @@
         "protección"
       ],
       "order": 2,
-      "resourceCount": 4
+      "resourceCount": 5
     },
     {
       "id": "payme",
@@ -158,7 +158,7 @@
         "propiedad intelectual"
       ],
       "order": 3,
-      "resourceCount": 3
+      "resourceCount": 4
     },
     {
       "id": "plan_maestro",
@@ -173,7 +173,7 @@
         "estrategia"
       ],
       "order": 4,
-      "resourceCount": 3
+      "resourceCount": 4
     },
     {
       "id": "game_theory",
@@ -188,7 +188,7 @@
         "incentivos"
       ],
       "order": 1,
-      "resourceCount": 2
+      "resourceCount": 3
     },
     {
       "id": "paradoja_probabilidad",
@@ -203,7 +203,7 @@
         "IA"
       ],
       "order": 2,
-      "resourceCount": 3
+      "resourceCount": 4
     },
     {
       "id": "divergencia",
@@ -218,7 +218,7 @@
         "liderazgo"
       ],
       "order": 3,
-      "resourceCount": 3
+      "resourceCount": 4
     },
     {
       "id": "riesgos_ia",
@@ -233,7 +233,7 @@
         "seguridad"
       ],
       "order": 1,
-      "resourceCount": 7
+      "resourceCount": 8
     },
     {
       "id": "digital_media",
@@ -248,10 +248,38 @@
         "audiencia"
       ],
       "order": 2,
-      "resourceCount": 2
+      "resourceCount": 3
     }
   ],
   "resources": [
+    {
+      "id": "control-analisis",
+      "collectionId": "control",
+      "title": "Análisis de Control",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/control/descripcion.md",
+      "downloadUrl": "./analisis/control/descripcion.md",
+      "thumbnail": null,
+      "size": 3086,
+      "updatedAt": "2026-08-13T15:41:54.157Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "agencia",
+        "acción",
+        "consistencia",
+        "calma"
+      ],
+      "summary": "Tomar el control de la vida no implica dominar cada factor externo, sino desarrollar la firme creencia de que las acciones individuales influyen directamente en el rumbo de la existencia .",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Control\n\nTomar el control de la vida no implica dominar cada factor externo, sino desarrollar la firme creencia de que las acciones individuales influyen directamente en el rumbo de la existencia. Al experimentar cómo un acto modifica la realidad, se genera un círculo de progreso y la mente se fortalece frente a la incertidumbre.\n\nLa ansiedad y la parálisis surgen al intentar prevenir todos los escenarios posibles, un esfuerzo inútil que solo genera pánico. La ansiedad proyecta la mente hacia el futuro, pero se combate de forma medible a través de la acción constante y progresiva. Incluso cuando una acción resulta en un fracaso, este actúa como un ansiolítico natural al desmitificar el peor escenario posible, brindando la calma de que lo peor ya pasó y dejando lecciones valiosas. Solo dar el primer paso, por mínimo que sea, disminuye el miedo y eleva la sensación de control.\n\nPara gestionar la toma de decisiones bajo la influencia del miedo, resulta efectivo catalogarlas en reversibles e irreversibles:\n\nSi una decisión es irreversible, requiere un análisis profundo.\n\nSi es reversible, debe ejecutarse con rapidez para aprender del resultado; si no funciona, siempre se puede corregir el rumbo.\n\nEl riesgo es como un músculo que se debilita si no se ejercita. Exponerse diariamente a pequeños riesgos construye una confianza genuina que ningún discurso de motivación puede replicar. A largo plazo, el mayor sufrimiento humano no es el dolor del fracaso, sino el arrepentimiento por inacción. Por ello, asumir riesgos en etapas tempranas de la vida protege la salud mental futura y amplía las fronteras de lo posible.\n\nLa consistencia diaria es la clave del crecimiento personal, bajo la premisa de que hacer un poco todos los días supera con creces a realizar un gran esfuerzo de manera esporádica. El desarrollo de habilidades, el cuidado físico y la adquisición de conocimientos generan un retorno de inversión exponencial a lo largo del tiempo, actuando como un interés compuesto en el destino individual. El tiempo es el recurso más valioso, y asignarle un precio elevado es una manifestación fundamental de amor propio.\n\nLa obsesión y el enfoque son indispensables para materializar cualquier proyecto de valor en el mundo. Aunque la cultura intente mitigar el término bajo palabras como \"foco\" o \"carrera\", los grandes avances requieren de una pasión que demande energía física e inversión creativa. Esta dedicación exige superar la vergüenza y el juicio de terceros, entendiendo que el simple hecho de dedicar la vida a trabajar en algo que importa ya constituye un privilegio extraordinario.\n\nFinalmente, la generosidad y el acto de ayudar son las vías más rápidas para el crecimiento personal y social. Apoyar a otros no solo disminuye el estrés al reducir el cortisol, sino que es la única actividad humana capaz de activar simultáneamente los cuatro neuroquímicos de la felicidad: dopamina, serotonina, oxitocina y endorfinas. Además, enseñar a los demás acelera y consolida el propio aprendizaje\n",
+      "relatedPdf": null,
+      "hash": "bdd20f1bd3bed799e9bc35786647505de55d4156a2422a8f3f839b9c60c6fd72",
+      "isAnalysis": true
+    },
     {
       "id": "control-controlarlo-todo-solo-te-garantiza-panico",
       "collectionId": "control",
@@ -279,7 +307,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "cdfa26957df7408b40bccc5b952043605d2482cc7e8d74deb5f4f874630ea59e"
+      "hash": "cdfa26957df7408b40bccc5b952043605d2482cc7e8d74deb5f4f874630ea59e",
+      "isAnalysis": false
     },
     {
       "id": "control-diez-veranos-para-emprender-en-pareja",
@@ -308,7 +337,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "e118c790887a2e15afea0992298b034e1577241d2098bfc6ad884e1e6d302fb6"
+      "hash": "e118c790887a2e15afea0992298b034e1577241d2098bfc6ad884e1e6d302fb6",
+      "isAnalysis": false
     },
     {
       "id": "control-domina-tu-vida-con-calma-matematica",
@@ -336,7 +366,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "6dade7a4223f0b58caa039816d088b4bb8b2fe2cbf7941f6bce5973f9f6f133e"
+      "hash": "6dade7a4223f0b58caa039816d088b4bb8b2fe2cbf7941f6bce5973f9f6f133e",
+      "isAnalysis": false
     },
     {
       "id": "control-el-videojuego-de-tu-vida",
@@ -363,7 +394,8 @@
       "pageCount": 10,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "c0ca7dcb762bebf97abd6e3cf63eeb3be915b7349d889bcb42efe5b46a93d094"
+      "hash": "c0ca7dcb762bebf97abd6e3cf63eeb3be915b7349d889bcb42efe5b46a93d094",
+      "isAnalysis": false
     },
     {
       "id": "control-guia-radical-para-el-futuro",
@@ -391,7 +423,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "74ebadcf59f3e6f771b5d5370cbb67efad3fc43226f60b4c588b555679ab75ed"
+      "hash": "74ebadcf59f3e6f771b5d5370cbb67efad3fc43226f60b4c588b555679ab75ed",
+      "isAnalysis": false
     },
     {
       "id": "control-mastering-control",
@@ -419,7 +452,8 @@
       "pageCount": 20,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "742970f412be6407fe2e8b2f5a69cffef3a1bec363932359d6692c2aea36cb0c"
+      "hash": "742970f412be6407fe2e8b2f5a69cffef3a1bec363932359d6692c2aea36cb0c",
+      "isAnalysis": false
     },
     {
       "id": "control-resiliencia-estoica-para-ninos-de-ocho-anos",
@@ -448,7 +482,36 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "159ee4516ae660df530a4796055879eed0994aee4faead60b7ffec62098595c8"
+      "hash": "159ee4516ae660df530a4796055879eed0994aee4faead60b7ffec62098595c8",
+      "isAnalysis": false
+    },
+    {
+      "id": "preocupacion-analisis",
+      "collectionId": "preocupacion",
+      "title": "Análisis de Preocupación",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/preocupacion/descripcion.md",
+      "downloadUrl": "./analisis/preocupacion/descripcion.md",
+      "thumbnail": null,
+      "size": 5042,
+      "updatedAt": "2026-08-13T15:46:06.668Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "ansiedad",
+        "calma",
+        "presente",
+        "bienestar"
+      ],
+      "summary": "Este libro fue escrito a partir de años de investigación, entrevistas y experiencias prácticas con el fin de ofrecer una guía funcional para vencer la ansiedad .",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Preocupación\n\nEste libro fue escrito a partir de años de investigación, entrevistas y experiencias prácticas con el fin de ofrecer una guía funcional para vencer la ansiedad. A continuación, se presenta un resumen estructurado de sus principales enseñanzas y herramientas:\n\n## 1. El impacto de la preocupación en la salud\n\n**Daños físicos reales:** El estrés emocional y la preocupación crónica se manifiestan en enfermedades físicas como úlceras, problemas cardíacos, artritis, caries, disfunciones de la tiroides y problemas de salud mental.\n\n**Estadísticas médicas:** Los expertos señalan que hasta el 70% de las consultas médicas se relacionan con problemas causados o agravados por la preocupación en lugar de causas físicas directas. Como advierte el texto de forma contundente: \"Los hombres que no saben cómo luchar contra la preocupación mueren jóvenes\".\n\n## 2. Técnicas fundamentales para desactivar la ansiedad\n\n**Compartimentos estancos:** Debes vivir un día a la vez, enfocándote en el hoy y manejando sus tareas una por una, en lugar de intentar controlar ansiosamente el pasado o el futuro. El hoy es nuestra posesión más segura.\n\n**Aceptar el peor escenario posible:** Ante un problema grave, pregúntate qué es lo peor que podría pasar, acéptalo mentalmente y toma pasos con calma para mejorar esa situación límite.\n\n**La ley de los promedios:** Cuestiona tus temores evaluando qué probabilidades reales existen de que ocurra aquello que tanto te preocupa.\n\n**Cooperar con lo inevitable:** Cuando las circunstancias estén fuera de tu control, la aceptación con gracia y compostura es el primer paso para superar las consecuencias de cualquier desgracia.\n\n**El \"stop-loss\" emocional:** Establece un límite estricto sobre cuánto estás dispuesto a permitir que te afecte un problema y niégate a darle más atención una vez superado ese límite. No intentes \"aserrar aserrín\" dándole vueltas al pasado.\n\n**Mantenerse ocupado:** Encontrar una actividad con propósito y mantenerse ocupado desplaza la ansiedad de la mente, ya que el cerebro no puede albergar ambas emociones al mismo tiempo.\n\n## 3. Un método lógico para resolver preocupaciones\n\nLa mayoría de las preocupaciones se pueden solucionar siguiendo estos pasos estructurados:\n\nAverigua y analiza los datos de forma objetiva, evitando tomar decisiones antes de tener el conocimiento necesario.\n\nAnota con precisión qué te preocupa (definiendo claramente el problema).\n\nAnota las posibles soluciones.\n\nDecide cuál es la mejor solución.\n\nComienza a ejecutar esa decisión de inmediato sin vacilaciones.\n\n## 4. Actitud mental positiva y relaciones humanas\n\n**Controla tus pensamientos:** \"Nuestra vida es lo que nuestros pensamientos la hacen\". Debes llenar la mente de pensamientos de felicidad, paz, coraje y esperanza.\n\n**Evita el resentimiento:** Odiar a tus enemigos no los daña a ellos, pero les da poder sobre tu propio sueño, salud y felicidad.\n\n**No esperes gratitud:** La felicidad no viene de recibir gratitud, sino del gozo de dar por el simple hecho de hacerlo.\n\n**Sé tu auténtico yo:** La imitación y la envidia destruyen la paz mental; nadie es tan miserable como quien anhela ser alguien diferente a quien es en cuerpo y mente.\n\n**Haz limonada de los limones:** Adopta una mentalidad positiva que busque aprender de los fracasos y encontrar las oportunidades ocultas en las dificultades.\n\n**Olvídate de ti mismo:** Interésate genuinamente en los demás y crea felicidad para ellos; esto te ayudará a liberar tu propia mente de ansiedades.\n\n## 5. Manejo del cansancio, las críticas y las finanzas\n\n**Prevención del cansancio:** El cansancio del trabajador sedentario proviene casi al 100% de factores psicológicos y emocionales. Para combatirlo, descansa antes de cansarte, relájate completamente e inyecta entusiasmo a las tareas aburridas (por ejemplo, convirtiéndolas en un juego).\n\n**Hábitos de trabajo eficientes:** Mantén tu escritorio limpio, prioriza tus tareas por orden de importancia, resuelve los problemas de inmediato tan pronto como tengas la información y aprende a delegar.\n\n**Enfrentar las críticas:** Las críticas o insultos injustificados suelen ser envidia o celos disfrazados. Haz lo mejor que puedas y luego \"sube tu paraguas\" para dejar que las opiniones de los demás te resbalen.\n\n**Insomnio:** No es peligroso por sí mismo, sino por la preocupación que genera la falta de sueño. Se alivia de manera más efectiva mediante la relajación, el ejercicio físico y aceptando la vigilia con calma.\n\n**Finanzas y carrera:** Investiga a fondo antes de comprometerte con una profesión. Para reducir las preocupaciones financieras, elabora un presupuesto, contrata seguros adecuados, ten un fondo de emergencia y nunca recurras al juego.\n\n🧠 Podríamos estructurar estos principios en un mapa mental detallado o en una guía de estudio interactiva para que tengas un recurso visual a mano cuando sientas que la preocupación empieza a ganar terreno.\n",
+      "relatedPdf": null,
+      "hash": "603dcb60bf32f656b05ad883dfb2bdef64a139448dc31efe379851c64b90a79b",
+      "isAnalysis": true
     },
     {
       "id": "preocupacion-guia-para-manejar-la-preocupacion",
@@ -476,7 +539,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "fb08d83cbb2cc66c45c7d8ad1912fb4623f5da6a0a1d0ba9b1bf661f3cb2a0fd"
+      "hash": "fb08d83cbb2cc66c45c7d8ad1912fb4623f5da6a0a1d0ba9b1bf661f3cb2a0fd",
+      "isAnalysis": false
     },
     {
       "id": "preocupacion-stop-loss-emocional-desactiva-la-preocupacion-y-empieza-a-vivi",
@@ -505,7 +569,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "728d33d518f039e29c51338fc49bba4315b67453ba5cad3b4b659fa57f1f1016"
+      "hash": "728d33d518f039e29c51338fc49bba4315b67453ba5cad3b4b659fa57f1f1016",
+      "isAnalysis": false
     },
     {
       "id": "preocupacion-the-calm-mind-blueprint",
@@ -532,7 +597,36 @@
       "pageCount": 12,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "34fe99d7a3f9b159c2b97f4b611172d20daf8d007848c3a2aeb66668685da7bb"
+      "hash": "34fe99d7a3f9b159c2b97f4b611172d20daf8d007848c3a2aeb66668685da7bb",
+      "isAnalysis": false
+    },
+    {
+      "id": "pick_yourself-analisis",
+      "collectionId": "pick_yourself",
+      "title": "Análisis de Elegirte",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/pick_yourself/descripcion.md",
+      "downloadUrl": "./analisis/pick_yourself/descripcion.md",
+      "thumbnail": null,
+      "size": 6861,
+      "updatedAt": "2026-08-13T16:08:37.582Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "agencia",
+        "creatividad",
+        "iniciativa",
+        "Seth Godin"
+      ],
+      "summary": "Este recurso presenta una conversación transformadora entre Mel Robbins y el experto en mercadeo Seth Godin sobre cómo superar el estancamiento personal.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Elegirte\n\nEste recurso presenta una conversación transformadora entre Mel Robbins y el experto en mercadeo Seth Godin sobre cómo superar el estancamiento personal. El diálogo se centra en el concepto de \"elegirse a uno mismo\", instando a las personas a dejar de esperar autorizaciones externas para perseguir sus metas. Godin explica que la resistencia interna es una señal de que estamos realizando un trabajo importante y propone ver los obstáculos como situaciones aceptables o problemas con solución. Asimismo, enfatiza que debemos actuar con generosidad y consistencia para convertirnos en la mejor versión de nosotros mismos, dejando atrás el miedo al juicio. Al final, se motiva a los oyentes a realizar \"un alboroto\" positivo, creando obras que impacten genuinamente a quienes nos rodean.\n\n\"Elegirte a ti mismo\" significa tomar la iniciativa, la agencia y la responsabilidad de hacer el trabajo que te importa, sin esperar a que alguien más te invite, te autorice o te dé permiso.\n\nEl concepto de \"esconderse\" está profundamente ligado a nuestra tendencia a esperar pasivamente. Según las fuentes, el sistema dominante nos enseña a esperar a ser elegidos: esperar a que una empresa nos entreviste, a que una editorial quiera publicar nuestro libro o a que nos inviten a participar en algo. Al decidir esperar a que alguien más nos dé luz verde, construimos \"un lugar perfecto para escondernos\".\n\nEscondernos nos resulta seguro y cómodo porque nos libera de la responsabilidad. Por ejemplo, si envías tu novela a 20 editoriales y todas te rechazan, sientes que ya no es tu culpa no publicar; te has escondido detrás de su rechazo. También nos escondemos al diluirnos en la multitud, en uniformes, en actitudes o en grupos sociales seguros para no destacar.\n\nPara dejar de esconderte y empezar a elegirte a ti mismo, las fuentes sugieren lo siguiente:\n\n**Asumir tu libertad y \"contratarte\" a ti mismo:** No necesitas que un agente inmobiliario te diga que limpies tu ático para hacerlo, tú mismo puedes \"contratarte\" para esa tarea. De la misma manera, debes elegirte para llevar a cabo tus proyectos importantes, no para ganar un premio, sino porque tienes la libertad y la agencia para hacerlo. En esa responsabilidad radica tu verdadera dignidad.\n\n**Aceptar la incomodidad de decir \"yo hice esto\":** Dejar de esperar es incómodo. Requiere valentía decir: \"Yo me elegí a mí mismo, escribí esto, aquí lo tienes, yo lo hice\" y ofrecerlo al mundo.\n\n**Dejar de ser un espectador:** En lugar de obsesionarte con la manera perfecta de hacer las cosas para agradar a los demás o quedarte mirando cómo otros actúan, elegirte a ti mismo significa actuar para no \"renunciar silenciosamente\" a tu propia vida.\n\nEn resumen, nadie te está obligando a esperar; esperar es una elección que utilizas para mantenerte a salvo. Dejar de esconderte es dar un paso al frente y crear tu propio camino asumiendo que tú eres la única persona que necesita autorizarte\n\n\"Hacer ruido\" (make a ruckus) no significa llamar la atención de manera escandalosa ni romper todas las reglas, sino hacer un trabajo que tenga significado para las personas a las que les importa.\n\nPara lograrlo sin abrumarse, las fuentes recomiendan enfocarse en la \"audiencia viable más pequeña\" y la \"pieza de arte viable más pequeña\". Esto significa buscar el cambio más pequeño que valga la pena hacer para el grupo más reducido posible, incluso si es solo para ti o para una sola persona.\n\nAquí tienes ejemplos de cómo \"hacer ruido\" con acciones pequeñas y realizables:\n\n**Ser voluntario un par de horas a la semana:** Si llevas años paralizado pensando que deberías volver a la escuela de enfermería pero ves demasiados obstáculos, puedes empezar yendo a un hospital o residencia de ancianos local para ser voluntario una tarde a la semana. Con solo dos horas puedes cambiar la vida de alguien y dejar de solo desearlo desde casa.\n\n**Crear un pequeño club de lectura en el trabajo:** Si quieres marcar la diferencia en tu empleo pero sientes que tu jefe no te da autoridad para cambiar los sistemas a gran escala, puedes invitar a solo cinco compañeros a leer un libro y discutirlo en el almuerzo de los viernes. Si funciona, lo repites; si no, lo dejas de hacer.\n\n**Limpiar el ático por iniciativa propia:** Hacerlo simplemente porque tú decidiste que era importante y te \"contrataste\" a ti mismo para hacerlo, en lugar de esperar a que un agente inmobiliario te lo exija cuando vayas a vender la casa.\n\n**Rescatar legados familiares o aportar a tu comunidad:** Tomarte el tiempo de escribir todas las recetas de tu abuela y autopublicar un pequeño libro de cocina, o ir a ser voluntario a los jardines comunitarios locales.\n\n**Disfrutar de un pasatiempo solo para ti:** Iniciar ese proyecto de cerámica en tu tiempo libre o tallar un remo de canoa sin que te importe si a tu vecino le gusta o no. Es un pasatiempo y lo haces para ti.\n\nEn resumen, hacer ruido puede ser un esfuerzo muy pequeño dirigido a una sola persona; la clave es dar ese primer paso para hacer algo importante, y luego, simplemente volver a hacerlo\n\nLa diferencia fundamental radica en que los problemas tienen solución, mientras que las situaciones no la tienen.\n\nUna situación es algo que no puedes cambiar ni controlar. Al carecer de solución, no tienes más opción que aceptarla. Reconocer que te enfrentas a una situación te \"libera del anzuelo\", ya que al no poder cambiarla, tu única tarea es aprender a convivir con ella. Ejemplos de situaciones incluyen hechos inalterables como las leyes de la física, la imposibilidad de estar en dos ciudades al mismo tiempo, o tratar de persuadir a una empresa para que te compre algo si definitivamente no quieren hacerlo.\n\nPor otro lado, un problema tiene una solución y un camino a seguir, incluso si esa solución no te gusta a corto plazo o no es el resultado con el que soñabas. Identificar algo como un problema te obliga a asumir la responsabilidad (\"te pone en el anzuelo\"), porque en el fondo sabes qué podrías hacer para resolverlo, pero quizás prefieres no hacerlo porque resulta incómodo o aterrador. Ejemplos de problemas incluyen superar una ruptura amorosa, cuidar mejor de tu salud, ceñirte a un presupuesto o atreverte a exponerte al juicio de los demás. También es un problema, por ejemplo, negociar tu salario: la solución existe (tener una conversación incómoda y honesta con tu jefe), aunque el proceso en sí no sea divertido.\n\n**En resumen, la clave está en identificar frente a qué estás parado:** si es una situación, acéptala; si es un problema, asume la incomodidad de aplicar la solución. Por ejemplo, si alguien va a actuar de una manera que no puedes controlar, puedes tratarlo como una situación y tu solución al problema simplemente es \"dejarles ser\".\n",
+      "relatedPdf": null,
+      "hash": "f31087a3bf3a9847593c1b953b3007605fd045d98ce9d95d52a5ac5c26a891a7",
+      "isAnalysis": true
     },
     {
       "id": "pick-yourself-crear-una-vida-que-importe",
@@ -560,7 +654,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "57de27a8870e07e11c2504c6769e24898d151e6cc757d75ca1d451a730f40cfa"
+      "hash": "57de27a8870e07e11c2504c6769e24898d151e6cc757d75ca1d451a730f40cfa",
+      "isAnalysis": false
     },
     {
       "id": "pick-yourself-stop-hiding-and-merely-ship-it",
@@ -588,7 +683,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "c7f7c1f17bcb9d839a3f4042a29d3883dc59e31cc2975c873dea9476f4a9d922"
+      "hash": "c7f7c1f17bcb9d839a3f4042a29d3883dc59e31cc2975c873dea9476f4a9d922",
+      "isAnalysis": false
     },
     {
       "id": "pick-yourself-the-agency-blueprint",
@@ -616,7 +712,36 @@
       "pageCount": 13,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "32bf788458a914e3deb2d79fbc24c203a0fc979c43783cf63c64dbc16a238a74"
+      "hash": "32bf788458a914e3deb2d79fbc24c203a0fc979c43783cf63c64dbc16a238a74",
+      "isAnalysis": false
+    },
+    {
+      "id": "ser_tu_mismo-analisis",
+      "collectionId": "ser_tu_mismo",
+      "title": "Análisis de Ser tú mismo",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/ser_tu_mismo/descripcion.md",
+      "downloadUrl": "./analisis/ser_tu_mismo/descripcion.md",
+      "thumbnail": null,
+      "size": 788,
+      "updatedAt": "2026-08-13T15:59:08.653Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "identidad",
+        "crecer",
+        "familia",
+        "límites"
+      ],
+      "summary": "Este texto funciona como una guía empática diseñada para explicar a los niños de aproximadamente ocho años el complejo proceso de crecer y madurar.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Ser tú mismo\n\nEste texto funciona como una guía empática diseñada para explicar a los niños de aproximadamente ocho años el complejo proceso de crecer y madurar. Utiliza la analogía de un videojuego y el aprendizaje de andar en bicicleta para ilustrar que los padres actúan como guías temporales y no como controladores de su destino. El contenido aborda temas fundamentales como el manejo de las emociones, la influencia de las amistades y la importancia de establecer límites para la autoprotección. Se enfatiza que la familia debe ser una base segura donde el menor pueda ser él mismo mientras desarrolla su propia brújula interna. Finalmente, la obra invita a ver la madurez como un camino gradual hacia la autonomía y la toma de decisiones responsables.\n",
+      "relatedPdf": null,
+      "hash": "0fd908f9a6adfc6e1624bfe3ad6a6ca5ba5169586d55afb6ee6cb620eaeb1753",
+      "isAnalysis": true
     },
     {
       "id": "ser-tu-mismo-tu-aventura-de-crecer",
@@ -643,7 +768,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "04052dffea36af24e9f3eaba32ac32d7a69e185d0771f26173d1c8d0c65f25bc"
+      "hash": "04052dffea36af24e9f3eaba32ac32d7a69e185d0771f26173d1c8d0c65f25bc",
+      "isAnalysis": false
     },
     {
       "id": "ser-tu-mismo-cinco-ninos-al-mando-de-un-avion",
@@ -672,7 +798,35 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "acd94a019b672daa2a8ec881b48f3803bb7856d34c0e9cca7e02634ab8a1d676"
+      "hash": "acd94a019b672daa2a8ec881b48f3803bb7856d34c0e9cca7e02634ab8a1d676",
+      "isAnalysis": false
+    },
+    {
+      "id": "reflexiones-analisis",
+      "collectionId": "reflexiones",
+      "title": "Análisis de Reflexiones",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/reflexiones/descripcion.md",
+      "downloadUrl": "./analisis/reflexiones/descripcion.md",
+      "thumbnail": null,
+      "size": 317,
+      "updatedAt": "2026-08-13T18:11:23.796Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "ideas",
+        "notas",
+        "contemplación"
+      ],
+      "summary": "Reflexiones breves sobre las decisiones que hacen posibles los momentos que desde fuera parecen suerte.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Reflexiones\n\nReflexiones breves sobre las decisiones que hacen posibles los momentos que desde fuera parecen suerte. Esta colección conecta la planeación consciente con la vida personal, la familia y los negocios: elegir una fecha, prepararse y estar presente cuando finalmente llega la oportunidad.\n",
+      "relatedPdf": null,
+      "hash": "5797e61002dbb436bd85116e42bd616989504c0d9dd8f9cd4918bea77e0bdd80",
+      "isAnalysis": true
     },
     {
       "id": "reflexiones-planetas",
@@ -693,12 +847,41 @@
         "text",
         "planetas"
       ],
-      "summary": "Notas y recursos de reflexiones.",
+      "summary": "Reflexiones breves sobre las decisiones que hacen posibles los momentos que desde fuera parecen suerte.",
       "featured": false,
       "pageCount": null,
       "textContent": "Ayer se alinearon los planetas.\nLiteral.\n\nEstaba flotando en una barca,\nen medio de la Albufera,\nen Valencia.\n\nCon mis hijos.\nCon amigos muy queridos.\nY arriba, el sol desapareciendo por completo.\n\nEs lo más espectacular que he visto en mi vida.\nY sé perfecto cómo se ve eso desde afuera.\nSe ve a suerte.\n\n“Qué suerte tienes, Oso.”\nDe suerte no tuvo nada.\n\n\n\nHace dos años cruzó México un eclipse total.\nYo me lo perdí.\nY me acuerdo del momento exacto en que le dije a mi hijo:\nEl siguiente no nos lo perdemos.\n\nEse mismo día empecé a planear el de ayer.\nDos años de preparación para algo que se acaba en lo que dura un suspiro.\n\nPlanear cuesta.\nA mí me quita flexibilidad.\nYo agendo cosas con años de anticipación.\nY mi calendario se va llenando de bloques que ya no puedo mover.\n\nA veces me choca.\nY aun así lo sigo haciendo.\nPorque ese es el precio de que la vida no se me escape.\n\nNos vendieron que lo espontáneo es lo romántico.\nQue las mejores cosas pasan cuando dejas fluir.\nSuena sexy.\nCasi nunca es verdad.\n\nLo que llamamos suerte casi siempre es una decisión que alguien tomó mucho antes.\n\nLos planetas no se alinean para ti.\nSe alinean solos.\nEl mérito es haber decidido estar ahí cuando pasara.\n\nY con tu negocio funciona igual.\nEl cliente que te cae “de la nada” viene de un contenido que publicaste hace meses.\nEl socio que te cambió el año es una relación que sembraste hace mucho.\nLa oportunidad que “apareció” estaba esperando a alguien que ya estuviera listo.\n\nPiensa en un momento que quieres vivir dentro de dos años.\nCon tus hijos.\nCon tu pareja.\nCon tu equipo.\nCon tu negocio.\nUno que si no lo agendas, simplemente no va a pasar.\n\nAgéndalo hoy.\nBloquéalo en el calendario.\nAunque todavía no sepas cómo le vas a hacer ni cómo lo vas a pagar.\nLa fecha primero.\nLos detalles después.\n\nPorque la vida no te va a preguntar cuándo tienes hueco.\n\n¿Cuál es tu siguiente eclipse?",
       "relatedPdf": null,
-      "hash": "c7662e7b035a0c34c0841969b80a82fdd2194cbc60709915a70bbe0c87e572ca"
+      "hash": "c7662e7b035a0c34c0841969b80a82fdd2194cbc60709915a70bbe0c87e572ca",
+      "isAnalysis": false
+    },
+    {
+      "id": "crear_negocios-analisis",
+      "collectionId": "crear_negocios",
+      "title": "Análisis de Crear negocios",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/crear_negocios/descripcion.md",
+      "downloadUrl": "./analisis/crear_negocios/descripcion.md",
+      "thumbnail": null,
+      "size": 3903,
+      "updatedAt": "2026-08-13T15:54:40.316Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "negocios",
+        "confianza",
+        "marketing",
+        "valor"
+      ],
+      "summary": "El conocimiento de tus fuentes se organiza en torno a una filosofía de negocios que combina la estructura de la ingeniería empresarial con la psicología del marketing moderno.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Crear negocios\n\nEl conocimiento de tus fuentes se organiza en torno a una filosofía de negocios que combina la estructura de la ingeniería empresarial con la psicología del marketing moderno. El siguiente es un resumen de las ideas centrales:\n\n## 1. El propósito de un negocio y los impulsos humanos\n\nUn negocio viable consiste en crear algo de valor que la gente quiera o necesite, a un precio que estén dispuestos a pagar, de manera sostenible y rentable. Los negocios exitosos conectan con uno o varios de los cinco impulsos humanos fundamentales: adquirir (estatus, dinero, influencia), relacionarse (conexión, amor), aprender (curiosidad, competencia), protegerse (seguridad, evitar dolor) o sentir (placer, entretenimiento, experiencias memorables).\n\n## 2. La especificidad: La audiencia mínima viable\n\nEl marketing tradicional de interrumpir personas y buscar mercados promedio es obsoleto. El camino moderno exige definir una audiencia mínima viable: el grupo más pequeño de personas que puede sostener el negocio si logras impactarlas profundamente. Al especializarte de forma idiosincrásica en un nicho (como una peluquería exclusiva para cabello rizado), dejas de ser un \"commodity\" promedio. En resumen: al elegir a tus clientes, estás eligiendo tu futuro y tu estilo de vida.\n\n## 3. Vencer la \"resistencia\" y lanzar sin perfeccionismo\n\nLa barrera principal al iniciar un proyecto no es la falta de ideas, sino la resistencia interna (el miedo a la crítica, al fracaso o a exponernos). El perfeccionismo suele ser una excusa para esconderse y no lanzar. Para superarlo, debes definir el estándar de calidad aceptable (la especificación) y, una vez cumplido, simplemente enviar el producto al mercado (merely ship it). Esto se logra diseñando una oferta mínima viable (un piloto o servicio manual previo) para probar la demanda real antes de construir plataformas costosas o complejas.\n\n## 4. Consistencia por encima de autenticidad\n\nEl marketing efectivo ocurre cuando tus clientes hablan de ti porque ofreces algo extraordinario y generoso (\"notable\"). Para lograr esto, debes evitar la trampa de la autenticidad. Los clientes no quieren un profesional auténticamente malhumorado; demandan consistencia. Ser profesional significa adoptar un rol, jugar la mejor versión de ti mismo todos los días y cumplir rigurosamente tu promesa de marca.\n\n## 5. Definir tu rol: Freelancer vs. Emprendedor\n\nPara evitar caer en una \"zona muerta\" de agotamiento extremo, debes tener claro en qué categoría juegas:\n\n**Freelancer:** Cobra por hacer el trabajo él mismo. Su camino de crecimiento no es acumular más clientes, sino conseguir mejores clientes que paguen más y valoren su especialización.\n\n**Emprendedor:** Utiliza recursos y personas para construir una organización y sistemas. Su objetivo es crear activos que le permitan generar valor e ingresos de manera predecible, incluso cuando no está presente\n\nEstas fuentes proponen una visión de los negocios donde el profesionalismo y la confianza se construyen a través de la consistencia, transformando los contratos legales en herramientas de claridad y respeto mutuo. Siguiendo las ideas de Seth Godin, se argumenta que una marca no es un diseño visual, sino una promesa cumplida que busca resolver problemas reales de manera extraordinaria para un público específico. Para proteger esta relación, es fundamental establecer acuerdos por escrito que definan expectativas, aseguren la propiedad intelectual y eviten la competencia basada únicamente en precios bajos. El enfoque sugiere sustituir la \"autenticidad\" informal por un comportamiento predecible, utilizando interfaces de bienvenida que reduzcan la fricción y validen el valor del trabajo. En última instancia, el éxito radica en ser notable y confiable, permitiendo que los clientes se conviertan en promotores naturales de la marca.\n",
+      "relatedPdf": null,
+      "hash": "5121c77e86c902e40196fb0473632e087a8f6984ae591f656f74bb81d1dbefad",
+      "isAnalysis": true
     },
     {
       "id": "crear-negocios-business-engineering-blueprint",
@@ -727,7 +910,8 @@
       "pageCount": 15,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "6d356c3b4b763937e3384e4f284021e16382425ed6b901a16954e5eb2cf5c838"
+      "hash": "6d356c3b4b763937e3384e4f284021e16382425ed6b901a16954e5eb2cf5c838",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-cambio-en-trabajo-moderno",
@@ -756,7 +940,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "91d3a3f954c93b39334b67085e766c53049834a50f72a9b86fe5faf4a3d10270"
+      "hash": "91d3a3f954c93b39334b67085e766c53049834a50f72a9b86fe5faf4a3d10270",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-ciclo-de-la-confianza-absoluta",
@@ -784,7 +969,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "35601f49906608f4d65ea8c343d63ca3e7c00da54525a47cee9e5ea176828019"
+      "hash": "35601f49906608f4d65ea8c343d63ca3e7c00da54525a47cee9e5ea176828019",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-como-ganar-la-confianza-absoluta-del-cliente",
@@ -812,7 +998,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "746d6161cb57883611e469330f0dc5962d8c630df1abb2b9786196ddc217a7f4"
+      "hash": "746d6161cb57883611e469330f0dc5962d8c630df1abb2b9786196ddc217a7f4",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-como-validar-tu-negocio-segun-kaufman",
@@ -841,7 +1028,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "5a7269dd7105464df232fddb647b5a4985582fd12b5a56f1c8edeba32a4b1b54"
+      "hash": "5a7269dd7105464df232fddb647b5a4985582fd12b5a56f1c8edeba32a4b1b54",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-crea-valor-extraordinario-y-blinda-tu-negocio",
@@ -869,7 +1057,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "f45a89c2cf495610c5559ac5b11f612e53a8f7b45dacda5c82685ba31c25c499"
+      "hash": "f45a89c2cf495610c5559ac5b11f612e53a8f7b45dacda5c82685ba31c25c499",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-engineering-trust",
@@ -897,7 +1086,8 @@
       "pageCount": 8,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "c2259426f3fc8024cd88a70abf2bb145e167024c375436d3d7e1166b966fc767"
+      "hash": "c2259426f3fc8024cd88a70abf2bb145e167024c375436d3d7e1166b966fc767",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-guia-para-crear-negocios-valiosos",
@@ -925,7 +1115,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "b6d4d683efdc39a5bf52edb271eab51f48ca9fde882621b8c7da243da6870c67"
+      "hash": "b6d4d683efdc39a5bf52edb271eab51f48ca9fde882621b8c7da243da6870c67",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-la-receta-de-seth-godin-para-triunfar",
@@ -954,7 +1145,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "c86c266ac1d91c3d79c2b5edaeea68fccfddb0fbac302a17ce575a615faf6f41"
+      "hash": "c86c266ac1d91c3d79c2b5edaeea68fccfddb0fbac302a17ce575a615faf6f41",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-las-5-piezas-del-negocio",
@@ -982,7 +1174,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "cd4e2418663e3ae83a25ad4bbb15129e5f28455176fa74b850749cc19d2e9c03"
+      "hash": "cd4e2418663e3ae83a25ad4bbb15129e5f28455176fa74b850749cc19d2e9c03",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-los-cinco-pilares-de-cualquier-negocio",
@@ -1011,7 +1204,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "631e1a8556a0a34f76ce7d7fb2eeb0591d076463e4c6fa8070b90b224b7cc468"
+      "hash": "631e1a8556a0a34f76ce7d7fb2eeb0591d076463e4c6fa8070b90b224b7cc468",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-marketing-humano-de-seth-godin",
@@ -1039,7 +1233,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "bce998e7441e522aa220d51650b02d22fe7048881f8f0a4f88fe414be6fbe0aa"
+      "hash": "bce998e7441e522aa220d51650b02d22fe7048881f8f0a4f88fe414be6fbe0aa",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-por-que-rechazar-clientes-es-rentable",
@@ -1068,7 +1263,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "30a06aa459b5085a741e85360eee64657aa32f04751f8ac3b53d0dd8b5e98881"
+      "hash": "30a06aa459b5085a741e85360eee64657aa32f04751f8ac3b53d0dd8b5e98881",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-the-ai-artisan",
@@ -1095,7 +1291,8 @@
       "pageCount": 13,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "d0ac8554baf16afe5378f2aea42c3d8fecceb403765af9678369289331455999"
+      "hash": "d0ac8554baf16afe5378f2aea42c3d8fecceb403765af9678369289331455999",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-the-divergent-playbook",
@@ -1123,7 +1320,8 @@
       "pageCount": 15,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "1ae6ef6b8b1edbf0a8f2ca30eb7b0f5e1893b8c129b4682b9617423c3dabc23e"
+      "hash": "1ae6ef6b8b1edbf0a8f2ca30eb7b0f5e1893b8c129b4682b9617423c3dabc23e",
+      "isAnalysis": false
     },
     {
       "id": "crear-negocios-the-professional-shield",
@@ -1151,7 +1349,36 @@
       "pageCount": 10,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "39fb02da26274755fd951c9c6959614ce56c1f1b003be488864a18399d772da5"
+      "hash": "39fb02da26274755fd951c9c6959614ce56c1f1b003be488864a18399d772da5",
+      "isAnalysis": false
+    },
+    {
+      "id": "freelance-analisis",
+      "collectionId": "freelance",
+      "title": "Análisis de Freelance",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/freelance/descripcion.md",
+      "downloadUrl": "./analisis/freelance/descripcion.md",
+      "thumbnail": null,
+      "size": 6992,
+      "updatedAt": "2026-08-13T16:18:40.780Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "freelance",
+        "contratos",
+        "México",
+        "protección"
+      ],
+      "summary": "Este documento constituye una plantilla integral de contrato diseñada para regular la prestación de servicios profesionales independientes dentro del marco legal mexicano.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Freelance\n\nEste documento constituye una plantilla integral de contrato diseñada para regular la prestación de servicios profesionales independientes dentro del marco legal mexicano. El texto detalla la naturaleza civil o mercantil de la relación, enfatizando la ausencia de subordinación laboral entre el cliente y el profesional freelance. A través de diversas cláusulas y anexos, se establecen pautas claras sobre el alcance de los proyectos, los esquemas de honorarios, la gestión de la propiedad intelectual y la confidencialidad de la información. Asimismo, el archivo incluye formatos específicos para documentar órdenes de cambio, procesos de aceptación de entregables y protocolos de cancelación o suspensión de servicios. El objetivo primordial de este recurso es brindar certeza jurídica a ambas partes mediante la formalización de obligaciones, plazos y mecanismos de resolución de controversias.\n\nEste contrato es una plantilla marco de prestación de servicios profesionales independientes diseñada específicamente para proyectos freelance en México (como desarrollo de software, diseño, consultoría, marketing o soporte técnico). Su propósito central es establecer un esquema que proteja legalmente al prestador de servicios (freelancer) frente al cliente, delimitando responsabilidades y asegurando el pago justo.\n\nLos puntos más importantes del documento se dividen en las siguientes secciones críticas:\n\n## 1. Naturaleza de la Relación Comercial (Cero Subordinación)\n\n**Ausencia de relación laboral:** Se define de forma explícita que el contrato es de carácter civil o mercantil. No existe subordinación laboral, jornada de trabajo, exclusividad ni supervisión directa.\n\n**Gestión de proyecto:** La coordinación de reuniones o prioridades se califica únicamente como gestión operativa, sin que pueda interpretarse como integración a la estructura del cliente o relación patronal.\n\n**Autonomía:** El prestador opera con total autonomía técnica y administrativa utilizando sus propios recursos, métodos y experiencia.\n\n## 2. Alcance, Revisiones y Correcciones\n\n**Exclusiones estrictas:** El alcance detallado de los servicios se define en el Anexo B. Todo aquello que no esté expresamente redactado como incluido se considera automáticamente excluido.\n\n**Aceptación tácita:** El cliente dispone de 5 días hábiles para revisar y aprobar un entregable. Si transcurrido ese tiempo no emite observaciones, o si decide usar, publicar, o poner en producción el material, se considerará aceptado de forma tácita y sin reservas.\n\n**Límite de correcciones:** Cada entregable incluye únicamente 1 ronda de correcciones enfocada a subsanar fallas frente al alcance pactado. Cambios de opinión, nuevas funciones o requerimientos tardíos se manejan como cambios de alcance.\n\n**Cambios de alcance:** Cualquier ajuste al plan inicial debe acordarse por escrito mediante una orden de cambio (Anexo D), especificando sus costos adicionales e impacto en el cronograma.\n\n## 3. Esquema de Pagos, Retenciones y Mora\n\n**Anticipo mínimo predeterminado:** Si no se pacta lo contrario en el Anexo C, se establece un anticipo inicial obligatorio del 50% antes de que el prestador inicie cualquier actividad sustantiva (reuniones de arranque, configuraciones, etc.). No se otorgan créditos.\n\n**Derecho de retención:** El prestador no tiene la obligación de liberar archivos fuente, credenciales, repositorios, diseños editables ni entregables finales hasta que el pago de la fase o hito correspondiente se encuentre efectivamente acreditado.\n\n**Mora y penalizaciones:** El retraso de los pagos por parte del cliente genera mora de forma automática. Esto faculta al prestador a suspender los servicios de inmediato y aplicar un interés moratorio del 2% mensual sobre los saldos vencidos.\n\n**Precio devengado no reembolsable:** Dado que el cliente contrata la reserva de disponibilidad y planeación técnica del freelancer, el precio total se considera devengado desde la firma del contrato. Todos los pagos iniciales o por hitos son no reembolsables.\n\n## 4. Propiedad Intelectual y Confidencialidad\n\n**Protección del know-how preexistente:** El prestador mantiene la titularidad absoluta de sus conocimientos, herramientas, procesos, metodologías y librerías preexistentes.\n\n**Transferencia condicionada al pago:** La cesión de derechos o licencia de uso sobre los entregables finales se materializa únicamente cuando el cliente liquide el precio total del proyecto.\n\n**Licencia por defecto:** Si no se especifica el régimen de propiedad intelectual en los anexos, tras el pago completo se concede al cliente una licencia de uso no exclusiva, no transferible y válida por 5 años dentro de México.\n\n**Secreto profesional:** Las partes acuerdan guardar confidencialidad respecto a la información comercial, técnica o personal compartida, obligación que subsiste durante 3 años posteriores a la conclusión del acuerdo.\n\n## 5. Suspensión, Cancelación y Liquidación Anticipada\n\n**Retrasos por falta de colaboración:** Si el cliente se retrasa más de 10 días hábiles en dar pagos, revisiones, accesos o decisiones, el prestador puede suspender el proyecto. Si la inactividad supera los 30 días naturales, el prestador puede declarar el proyecto cancelado.\n\n**Aceleración de pagos:** En caso de que el cliente cancele el proyecto por conveniencia o detenga su ejecución sin causa justificada por más de 30 días, la totalidad del saldo insoluto del contrato se vencerá de manera anticipada y deberá liquidarse en 5 días hábiles.\n\n**Límite de responsabilidad:** La responsabilidad acumulada del prestador ante reclamaciones se limita al monto que el cliente le haya pagado efectivamente en los 3 meses anteriores al suceso reclamado.\n\n### Estructura de Anexos del Contrato\n\nLa plantilla se complementa con seis anexos prácticos diseñados para documentar la operación del día a día:\n\n**Anexo A (Condiciones Particulares):** Datos fiscales de contacto de las partes e información general del proyecto.\n\n**Anexo B (Alcance y Entregables):** Detalle técnico de los servicios incluidos, exclusiones explícitas, dependencias y criterios de aceptación.\n\n**Anexo C (Honorarios y Pagos):** Tabla de costos, esquema de hitos de cobro y condiciones de propiedad intelectual.\n\n**Anexo D (Orden de Cambio):** Formato para documentar modificaciones o solicitudes extra dentro del proyecto.\n\n**Anexo E (Acta de Entrega):** Formato para registrar la entrega formal de un hito y habilitar el plazo de revisión del cliente.\n\n**Anexo F (Aviso de Cancelación/Suspensión):** Documento para formalizar la detención del proyecto, asentar saldos pendientes por cobrar y entregables liberados.\n\n📋 Si tienes en puerta un proyecto real con un cliente, puedo ayudarte a estructurar un borrador adaptado para el Anexo B (Alcance y Entregables) o el Anexo C (Honorarios) para que lo tengas listo junto a tu contrato.\n",
+      "relatedPdf": null,
+      "hash": "b9a921493d11693b1af129b658728e9b7d49fb446bf6028316345ff59ffaa721",
+      "isAnalysis": true
     },
     {
       "id": "freelance-blindaje-legal-para-servicios-profesionales-independientes",
@@ -1180,7 +1407,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "b53b91ba05b685aca246653b8124cb2c30b19517b22c751ab657af9449b33ad8"
+      "hash": "b53b91ba05b685aca246653b8124cb2c30b19517b22c751ab657af9449b33ad8",
+      "isAnalysis": false
     },
     {
       "id": "freelance-contrato-servicios-profesionales-freelance-mexico",
@@ -1209,7 +1437,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": "freelance-contrato-servicios-profesionales-freelance-mexico-pdf",
-      "hash": "4c0908873fb0f594ecd5af2a37fa1ee74ae7caf0df1efb6669c25956b71e46f9"
+      "hash": "4c0908873fb0f594ecd5af2a37fa1ee74ae7caf0df1efb6669c25956b71e46f9",
+      "isAnalysis": false
     },
     {
       "id": "freelance-contrato-servicios-profesionales-freelance-mexico-pdf",
@@ -1238,7 +1467,8 @@
       "pageCount": 21,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "caa4f8d68ded1f54aaf67dc6dc6148155507f8aa853383544204c4112f2a937f"
+      "hash": "caa4f8d68ded1f54aaf67dc6dc6148155507f8aa853383544204c4112f2a937f",
+      "isAnalysis": false
     },
     {
       "id": "freelance-guia-para-contratos-freelance-mexico",
@@ -1265,7 +1495,35 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "95d2c3d6ad9714247734d8581c82c5742c9e1bf5de9fb4ac190b87ad421f2e30"
+      "hash": "95d2c3d6ad9714247734d8581c82c5742c9e1bf5de9fb4ac190b87ad421f2e30",
+      "isAnalysis": false
+    },
+    {
+      "id": "payme-analisis",
+      "collectionId": "payme",
+      "title": "Análisis de Cobros y contratos",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/payme/descripcion.md",
+      "downloadUrl": "./analisis/payme/descripcion.md",
+      "thumbnail": null,
+      "size": 2069,
+      "updatedAt": "2026-08-13T15:43:45.298Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "cobros",
+        "contratos",
+        "propiedad intelectual"
+      ],
+      "summary": "Aquí tienes un resumen puntual de los principios clave abordados en las fuentes para proteger tu trabajo y asegurar tus pagos: El contrato es obligatorio y protege a ambas partes: Jamás empieces a trabajar sin un contrato firmado, ya que al hacerlo pierdes toda tu ventaja para negociar .",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Cobros y contratos\n\nAquí tienes un resumen puntual de los principios clave abordados en las fuentes para proteger tu trabajo y asegurar tus pagos:\n\n**El contrato es obligatorio y protege a ambas partes:** Jamás empieces a trabajar sin un contrato firmado, ya que al hacerlo pierdes toda tu ventaja para negociar. El propósito del contrato es establecer definiciones y expectativas claras sobre qué hacer si las cosas salen mal para proteger tanto al cliente como a ti.\n\n**La propiedad intelectual es tu mayor garantía:** Todo el trabajo que realizas te pertenece exclusivamente a ti. La propiedad intelectual solo debe transferirse al cliente en el momento en que se haya realizado el pago total.\n\n### Implementa cláusulas defensivas innegociables\n\n**Tarifas de cancelación (Kill fees):** Aseguran que recibas una compensación económica si el cliente cancela el proyecto sin un motivo válido.\n\n**Honorarios de abogados:** Establece que la parte perdedora en una disputa legal pague los honorarios de los abogados.\n\n**Retrasos y aprobaciones:** Incluye penalizaciones por pagos atrasados y establece plazos cortos y estrictos para que el cliente apruebe o rechace los entregables por escrito.\n\n**Controla el alcance del proyecto:** Si a la mitad del camino el cliente cambia los requisitos o las metas del proyecto, el contrato actual debe darse por terminado para abrir un nuevo contrato o una enmienda.\n\n**No cedas ante las banderas rojas:** Nunca aceptes ciegamente los contratos genéricos de los clientes, ya que suelen quitarte derechos e imponerte responsabilidades (liability) imposibles de cumplir. Si un cliente no quiere poner los términos de pago por escrito y te pide que \"confíes en él\", debes abandonar el proyecto de inmediato.\n\n**Invierte en asesoría legal:** Contratar a un abogado para que redacte tus contratos es el paso definitivo para dejar de ser un aficionado. Un abogado te ahorrará miles de dólares en pérdidas y se encargará de las conversaciones difíciles con los clientes sin dañar la relación comercial\n",
+      "relatedPdf": null,
+      "hash": "19c5b4f41e3b3413795480233013ecd4af125af6b8a50fce9a883e9e59aae3c7",
+      "isAnalysis": true
     },
     {
       "id": "payme-blindaje-legal-para-asegurar-tus-cobros",
@@ -1293,7 +1551,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "f6aa7a7ea0c61c9f96b8623dcfb3337932eea4042bd45a8d87a6a4517cc2ebf1"
+      "hash": "f6aa7a7ea0c61c9f96b8623dcfb3337932eea4042bd45a8d87a6a4517cc2ebf1",
+      "isAnalysis": false
     },
     {
       "id": "payme-el-negocio-del-diseno-contratos",
@@ -1320,7 +1579,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "72e92a3ce922a2392284bdc802e18d3dfb7b3f30fd1c1d791c5a3e1bb8ca1149"
+      "hash": "72e92a3ce922a2392284bdc802e18d3dfb7b3f30fd1c1d791c5a3e1bb8ca1149",
+      "isAnalysis": false
     },
     {
       "id": "payme-the-creative-structural-blueprint",
@@ -1348,7 +1608,36 @@
       "pageCount": 15,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "abf94a9b719f148e9ba45bd505346e1a1d3497565701db45b6140f41570d3f52"
+      "hash": "abf94a9b719f148e9ba45bd505346e1a1d3497565701db45b6140f41570d3f52",
+      "isAnalysis": false
+    },
+    {
+      "id": "plan_maestro-analisis",
+      "collectionId": "plan_maestro",
+      "title": "Análisis de Plan maestro",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/plan_maestro/descripcion.md",
+      "downloadUrl": "./analisis/plan_maestro/descripcion.md",
+      "thumbnail": null,
+      "size": 1029,
+      "updatedAt": "2026-08-13T15:56:20.982Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "arquitectura",
+        "IA",
+        "producto",
+        "estrategia"
+      ],
+      "summary": "El Plan Maestro \"El Arquitecto\" es un documento técnico que detalla la creación de un agente de inteligencia artificial diseñado para generar planes de negocio de estándar internacional.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Plan maestro\n\nEl Plan Maestro \"El Arquitecto\" es un documento técnico que detalla la creación de un agente de inteligencia artificial diseñado para generar planes de negocio de estándar internacional. Este producto digital, orientado a emprendedores del Summit 2026, guía al usuario en una conversación en tiempo real para transformar ideas desordenadas en documentos profesionales descargables. Su arquitectura técnica utiliza un stack moderno compuesto por Vue 3, PHP 8.2 y la API de OpenAI, priorizando siempre la seguridad y privacidad de los datos mediante el procesamiento local y el uso de proxies. El sistema emplea una estrategia de modelos en cascada para optimizar costos, adaptando el contenido generado a la etapa específica de cada proyecto, ya sea mediante Lean Canvas o planes financieros robustos. Finalmente, el documento actúa como un contrato de construcción preciso, definiendo flujos de usuario, principios de diseño visual y mecanismos estrictos para evitar el abuso de recursos.\n",
+      "relatedPdf": null,
+      "hash": "7487dc9664286ea12008e482223551b09acd7a4bac064f392cd9974783c0eaae",
+      "isAnalysis": true
     },
     {
       "id": "plan-maestro-agente-el-arquitecto",
@@ -1376,7 +1665,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "2508575dc598ecff2089141458100c4c8f8eecdc82084ed227c4126b459d5dd0"
+      "hash": "2508575dc598ecff2089141458100c4c8f8eecdc82084ed227c4126b459d5dd0",
+      "isAnalysis": false
     },
     {
       "id": "plan-maestro-el-arquitecto-blueprint",
@@ -1404,7 +1694,8 @@
       "pageCount": 13,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "7125474e3a7f9f3f532a327094d394314449196fd0c7a650c55684e2f7de77b2"
+      "hash": "7125474e3a7f9f3f532a327094d394314449196fd0c7a650c55684e2f7de77b2",
+      "isAnalysis": false
     },
     {
       "id": "plan-maestro-el-arquitecto-jubila-el-plan-de-negocio",
@@ -1433,7 +1724,36 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "90540dce5e1b4d929a4624a47def20b5c0f5f2b289670925ee8bf01f28df6f87"
+      "hash": "90540dce5e1b4d929a4624a47def20b5c0f5f2b289670925ee8bf01f28df6f87",
+      "isAnalysis": false
+    },
+    {
+      "id": "game_theory-analisis",
+      "collectionId": "game_theory",
+      "title": "Análisis de Teoría de juegos",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/game_theory/descripcion.md",
+      "downloadUrl": "./analisis/game_theory/descripcion.md",
+      "thumbnail": null,
+      "size": 4566,
+      "updatedAt": "2026-08-13T16:00:59.540Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "decisiones",
+        "estrategia",
+        "cooperación",
+        "incentivos"
+      ],
+      "summary": "Este artículo explora la teoría de juegos como una herramienta matemática para descifrar las interacciones humanas y la toma de decisiones estratégicas.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Teoría de juegos\n\nEste artículo explora la teoría de juegos como una herramienta matemática para descifrar las interacciones humanas y la toma de decisiones estratégicas. El autor analiza conceptos clave como el dilema del prisionero, el equilibrio de Nash y la importancia de la cooperación frente a la competencia en escenarios de suma cero. A través de ejemplos cotidianos, se explica cómo las señales sociales y la reputación influyen en el éxito a largo plazo dentro de sistemas complejos. El texto busca que el lector identifique los incentivos invisibles que rigen sus relaciones, finanzas y carrera profesional. Finalmente, enfatiza que comprender estas estructuras permite abandonar comportamientos automáticos para actuar con mayor conciencia y eficacia en el mundo real.\n\nSegún los principios de la teoría de juegos, las interacciones humanas se pueden clasificar en varios tipos de juegos, cada uno con sus propias reglas invisibles e incentivos:\n\n## Juegos de suma cero y de suma positiva\n\n**Juegos de suma cero (Zero-sum games):** Son aquellos en los que la ganancia de una persona equivale exactamente a la pérdida de otra, ya que los recursos son limitados. Ejemplos de esto incluyen el póker, los deportes o competir por un ascenso laboral donde solo hay una vacante.\n\n**Juegos de suma positiva (Positive-sum games):** Son escenarios en los que el beneficio total puede crecer, por lo que ambas partes pueden ganar. Las asociaciones comerciales y las relaciones personales son juegos de suma positiva donde la cooperación beneficia a todos. Sin embargo, la mayoría de las personas cometen el error de competir y ser egoístas en este tipo de juegos, tratándolos erróneamente como si fueran de suma cero.\n\n## Juegos de un solo intento y juegos repetidos\n\n**Juegos de un solo intento (One-shot games):** Se juegan una sola vez con alguien a quien no volverás a ver. En estas interacciones, existe un fuerte incentivo para traicionar o perjudicar a la otra persona con el fin de maximizar la ganancia a corto plazo.\n\n**Juegos repetidos (Repeated games):** Ocurren cuando interactúas de forma recurrente con la misma persona, como colegas, clientes o amigos. En estos juegos la reputación es fundamental y lo más estratégico es cooperar, generar confianza y optimizar a largo plazo. En estos casos, la estrategia \"ojo por ojo\" (cooperar primero y luego reflejar lo que hizo el otro jugador) resulta ser inmensamente efectiva.\n\n## Juegos de coordinación\n\n**Juegos de coordinación (Coordination games):** Son situaciones donde todos se benefician si hacen exactamente lo mismo. Lo importante no es qué opción se elige, sino que todo el mundo esté de acuerdo y coordinado. Algunos ejemplos cotidianos son conducir por el lado derecho o izquierdo de la calle, elegir una misma aplicación de mensajería para hablar con los amigos, o el uso generalizado del teclado QWERTY.\n\n## Juegos de señalización\n\n**Juegos de señalización (Signaling games):** Ocurren cuando es imposible demostrar una cualidad directamente, por lo que las personas realizan una acción muy costosa que solo alguien con esa cualidad podría permitirse. Obtener títulos universitarios prestigiosos, comprar bienes de lujo como relojes Rolex o trabajar jornadas laborales extenuantes son formas de \"señalar\" inteligencia, riqueza o ambición al resto del mundo.\n\n## Dilemas y modelos de comportamiento específicos\n\n**El juego del ultimátum (The Ultimatum Game):** Una persona propone una división de recursos (como dividir una cuenta o un acuerdo de negocios) y el otro solo puede aceptar o rechazar; si rechaza, ninguno de los dos obtiene nada. Este juego revela que los humanos no son puramente racionales, pues el orgullo y la percepción de justicia suelen hacer que las personas rechacen acuerdos incluso cuando ambas partes se beneficiarían.\n\n**El dilema del prisionero (Prisoner's Dilemma):** Una situación donde la opción que parece más segura y lógica desde el punto de vista individual (traicionar al compañero) conduce a un resultado colectivo mucho peor que si ambos hubieran confiado el uno en el otro y cooperado.\n\n**La tragedia de los comunes (The Tragedy of the Commons):** Un problema asociado a un recurso compartido. Es racionalmente lógico que cada individuo intente usar el recurso lo máximo posible, pero ese consumo excesivo termina destruyendo el recurso, perjudicando a todos los involucrados. Ejemplos de esto incluyen la sobrepesca, la contaminación ambiental y las cocinas de oficina desordenadas\n",
+      "relatedPdf": null,
+      "hash": "dd0f94783a57e09bf4e867ab6835b204c06fe6c66de0afb5cfbfbdab3e6248db",
+      "isAnalysis": true
     },
     {
       "id": "game-theory-teoria-de-juegos-en-interacciones",
@@ -1462,7 +1782,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "32240c161b3ab7e1973df80f08b71e1c1d353942483dea94e2c9a50035fa4132"
+      "hash": "32240c161b3ab7e1973df80f08b71e1c1d353942483dea94e2c9a50035fa4132",
+      "isAnalysis": false
     },
     {
       "id": "game-theory-trampas-matematicas-de-nuestra-logica-individual",
@@ -1491,7 +1812,36 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "9f6c2260a2599c9d685b98a56fbdce35651f814542a5251d66ed5b59712889ea"
+      "hash": "9f6c2260a2599c9d685b98a56fbdce35651f814542a5251d66ed5b59712889ea",
+      "isAnalysis": false
+    },
+    {
+      "id": "paradoja_probabilidad-analisis",
+      "collectionId": "paradoja_probabilidad",
+      "title": "Análisis de Probabilidad y paradojas",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/paradoja_probabilidad/descripcion.md",
+      "downloadUrl": "./analisis/paradoja_probabilidad/descripcion.md",
+      "thumbnail": null,
+      "size": 1050,
+      "updatedAt": "2026-08-13T15:41:55.906Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "probabilidad",
+        "incertidumbre",
+        "decisiones",
+        "IA"
+      ],
+      "summary": "Las fuentes analizan la transformación organizacional impulsada por la inteligencia artificial, destacando una tendencia hacia estructuras corporativas más planas y la reducción de mandos intermedios.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Probabilidad y paradojas\n\nLas fuentes analizan la transformación organizacional impulsada por la inteligencia artificial, destacando una tendencia hacia estructuras corporativas más planas y la reducción de mandos intermedios. Se explica que las empresas están aumentando el número de reportes directos por líder, delegando tareas administrativas a agentes de IA para priorizar la estrategia y la ejecución técnica. Sin embargo, los textos advierten que muchas implementaciones actuales son solo un teatro de innovación sin beneficios financieros claros debido a la falta de métricas reales y una capacitación deficiente. La narrativa sugiere que el valor futuro no reside en generar contenido genérico, sino en la curación humana, la verificación y el rediseño de flujos de trabajo. En última instancia, se propone que la tecnología debe funcionar como un amplificador de la productividad, exigiendo que los líderes dejen de ser meros gestores para convertirse en contribuyentes activos y técnicamente competentes.\n",
+      "relatedPdf": null,
+      "hash": "3d43531706b5358d92c916a250979ef623cc794b2d8d3590bb15f8b066290678",
+      "isAnalysis": true
     },
     {
       "id": "paradoja-probabilidad-ia-y-el-fin-del-manager",
@@ -1518,7 +1868,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "7645196c1c96e37e342d9c623287ad73b28ed2b9aa7ba7a42c934223241280ee"
+      "hash": "7645196c1c96e37e342d9c623287ad73b28ed2b9aa7ba7a42c934223241280ee",
+      "isAnalysis": false
     },
     {
       "id": "paradoja-probabilidad-ia-y-la-trampa-de-lo-probable",
@@ -1546,7 +1897,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "b15f9c41f758abd7f1ee1528a0facf78491ba181859001e4b38825636dd4855c"
+      "hash": "b15f9c41f758abd7f1ee1528a0facf78491ba181859001e4b38825636dd4855c",
+      "isAnalysis": false
     },
     {
       "id": "paradoja-probabilidad-the-probability-paradox",
@@ -1574,7 +1926,36 @@
       "pageCount": 12,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "c35dd6d911100300fdf2f5db99549be423f960cefbf0f8208ac3a45dbaed7d6c"
+      "hash": "c35dd6d911100300fdf2f5db99549be423f960cefbf0f8208ac3a45dbaed7d6c",
+      "isAnalysis": false
+    },
+    {
+      "id": "divergencia-analisis",
+      "collectionId": "divergencia",
+      "title": "Análisis de Divergencia",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/divergencia/descripcion.md",
+      "downloadUrl": "./analisis/divergencia/descripcion.md",
+      "thumbnail": null,
+      "size": 5023,
+      "updatedAt": "2026-08-13T16:21:56.888Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "cambio",
+        "conducta",
+        "organizaciones",
+        "liderazgo"
+      ],
+      "summary": "Este texto propone una metodología de gestión del cambio basada en la psicología conductual, centrada en la metáfora del jinete (la razón), el elefante (la emoción) y el camino (el entorno).",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Divergencia\n\nEste texto propone una metodología de gestión del cambio basada en la psicología conductual, centrada en la metáfora del jinete (la razón), el elefante (la emoción) y el camino (el entorno). A diferencia de los enfoques tradicionales que apelan únicamente a la lógica, el autor sugiere estrategias divergentes como replicar casos de éxito internos y simplificar las acciones para eliminar la ambigüedad. El enfoque destaca la importancia de generar conexiones emocionales, honrar los procesos de pérdida y rediseñar los espacios de trabajo para que el comportamiento deseado sea el más sencillo de ejecutar. Además, se enfatiza el uso de la identidad colectiva y las victorias rápidas para mantener la motivación y facilitar la adopción de nuevas dinámicas. En definitiva, el contenido ofrece una guía práctica para transformar organizaciones entendiendo que la resistencia suele ser falta de claridad o agotamiento y no una oposición voluntaria.\n\nEste modelo de gestión del cambio se basa en la metáfora del Jinete (la razón), el Elefante (la emoción) y el Camino (el entorno). Mientras que los métodos tradicionales fallan porque solo le hablan a la lógica del Jinete, el Checklist Divergente propone intervenir de forma simultánea en los tres elementos mediante nueve movimientos estratégicos:\n\n**Clonar a quien ya está ganando (Puntos Brillantes):** En lugar de paralizarse analizando todo lo que está mal en la organización, se debe buscar a los equipos o personas que ya están logrando resultados exitosos bajo las mismas restricciones, descifrar qué hacen diferente y replicarlo. Esto se ilustra con el éxito de Jerry Sternin combatiendo la desnutrición en Vietnam al copiar las prácticas específicas de las madres locales con hijos sanos.\n\n**Tratar la resistencia como falta de claridad:** Lo que comúnmente se etiqueta como resistencia suele ser falta de claridad, y lo que parece pereza suele ser agotamiento. La solución consiste en guionizar los movimientos críticos, traduciendo el cambio en una o dos conductas concretas y observables, tal como se logró al pedir la compra específica de \"leche al 1%\" en lugar de dar la instrucción vaga de \"comer más sano\".\n\n**Encoger el cambio:** Los cambios masivos asustan al Elefante y provocan parálisis. Al reducir el primer paso a algo tan pequeño que sea casi imposible rechazarlo, se genera el impulso inicial. Ejemplos de esto son la técnica de limpieza de \"cinco minutos\" o el aumento en el uso de tarjetas de fidelidad cuando se entregan con dos sellos de regalo pre-puestos.\n\n**Hacer que la gente sienta el cambio (Ver-Sentir-Cambiar):** Las personas no cambian por análisis lógicos o datos presentados en un PowerPoint, sino por emociones. Se debe presentar la realidad de forma física y tangible, como el caso del gerente que amontonó 424 tipos distintos de guantes de trabajo sobre la mesa de juntas para evidenciar el despilfarro visualmente, logrando en minutos lo que ningún reporte financiero había conseguido.\n\n**Honrar primero lo que termina:** Todo cambio implica una transición psicológica que inicia con una pérdida (de estatus, rutina, comodidad o identidad). Reconocer abiertamente lo que la gente está dejando atrás y realizar pequeños rituales de cierre ayuda a que las personas acepten el nuevo comienzo sin quedarse estancadas en el duelo.\n\n**Rediseñar el entorno (Ajustar el camino):** No se debe confiar la transformación únicamente a la fuerza de voluntad. Modificar el entorno para que la conducta deseada sea la opción por defecto y el camino más fácil garantiza la adopción automática, tal como ocurre con las plataformas digitales que automatizan el ahorro mensual.\n\n**Apelar a la identidad:** Los cambios profundos se sostienen sobre quiénes creemos que somos (\"¿qué haría alguien como yo?\") y no solo sobre incentivos de costo-beneficio. Conectar el cambio con una identidad valorada o dar una \"etiqueta de identidad\" motiva a las personas a actuar de forma coherente con ella, similar a cómo una maestra mejoró el rendimiento de sus alumnos tratándolos constantemente como \"eruditos\".\n\n**Mover a la manada (Prueba Social):** El comportamiento humano es social y sumamente contagioso. Para acelerar el cambio, se debe hacer visible la adopción de los demás (prueba social), demostrando que la mayoría ya se está moviendo, un principio clave en las campañas de ahorro de energía basadas en el consumo de los vecinos.\n\n**Cultivar micro-victorias visibles:** En lugar de prometer beneficios a largo plazo, se deben planificar y celebrar éxitos rápidos e indiscutibles en las primeras semanas para mantener motivado al Elefante y desarmar a los escépticos, tal como se aplicó en la \"Campaña de las 100,000 vidas\" en hospitales de EE.UU..\n\nEn resumen, el Checklist Divergente demuestra que el éxito de una transformación no radica en la industria o sector, sino en dirigir al Jinete, motivar al Elefante y allanar el Camino\n",
+      "relatedPdf": null,
+      "hash": "6fa2ed56e99cf02bb3aa9929afb625b3774581a18b15ab6c22bdba82c972e20a",
+      "isAnalysis": true
     },
     {
       "id": "divergencia-direct-the-rider-and-motivate-the-elephant",
@@ -1603,7 +1984,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "3df952e8c05ca9aad4805f1d30524578c1b226b3dfee4df5b82c03a56a837a81"
+      "hash": "3df952e8c05ca9aad4805f1d30524578c1b226b3dfee4df5b82c03a56a837a81",
+      "isAnalysis": false
     },
     {
       "id": "divergencia-el-jinete-el-elefante-y-el-camino",
@@ -1632,7 +2014,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "5b13c4df1d4a04a4debecda5715462d83e2d60b92216c0abcddff7734284fdd4"
+      "hash": "5b13c4df1d4a04a4debecda5715462d83e2d60b92216c0abcddff7734284fdd4",
+      "isAnalysis": false
     },
     {
       "id": "divergencia-gestion-del-cambio-divergente",
@@ -1660,7 +2043,36 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "4f829d360f3f02d39e712f6e901548693830006340d37a765f39afe74938e2ce"
+      "hash": "4f829d360f3f02d39e712f6e901548693830006340d37a765f39afe74938e2ce",
+      "isAnalysis": false
+    },
+    {
+      "id": "riesgos_ia-analisis",
+      "collectionId": "riesgos_ia",
+      "title": "Análisis de Riesgos de la IA",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/riesgos_ia/descripcion.md",
+      "downloadUrl": "./analisis/riesgos_ia/descripcion.md",
+      "thumbnail": null,
+      "size": 3881,
+      "updatedAt": "2026-08-13T16:17:20.619Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "IA",
+        "trabajo",
+        "criterio",
+        "seguridad"
+      ],
+      "summary": "El contenido analiza los riesgos ocultos que surgen al integrar la inteligencia artificial en el entorno laboral contemporáneo.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Riesgos de la IA\n\nEl contenido analiza los riesgos ocultos que surgen al integrar la inteligencia artificial en el entorno laboral contemporáneo. Los autores explican que, lejos de simplificar las tareas, esta tecnología puede intensificar la carga de trabajo y generar un agotamiento mental significativo en los empleados. Se destaca que el uso constante de estas herramientas borra las fronteras entre la vida personal y profesional, fomentando una cultura de disponibilidad absoluta. Además, el texto advierte sobre la pérdida de capacidad crítica e innovación, ya que los usuarios tienden a conformarse con respuestas promedio para satisfacer métricas de eficiencia. Para mitigar estos efectos, se recomienda establecer procesos claros y pausas deliberadas que prioricen el bienestar humano sobre la automatización. Finalmente, se subraya la importancia de mantener un anclaje humano para evitar que la dependencia tecnológica anule la creatividad colectiva.\n\nLa inteligencia artificial no reduce el trabajo, sino que lo intensifica. Esto ocurre debido a una expansión de tareas, ya que los empleados asumen responsabilidades adicionales al intentar llenar lagunas de conocimiento, lo que provoca un mayor nivel de agotamiento (burnout) y anula la toma de decisiones ante la gran cantidad de opciones. Además, la IA difumina la frontera entre la vida personal y profesional, creando una sensación de urgencia e iteración infinita que impide a los trabajadores desconectarse. También agrava el problema de la multitarea, lo que disminuye drásticamente la capacidad de concentración y deja múltiples tareas abiertas sin cerrar.\n\nEl cerebro humano comienza a \"freírse\" y pierde su capacidad crítica. Al interactuar con la IA, los usuarios tienden a adaptarse a sus respuestas promedio y comienzan a aceptarlas como soluciones excelentes o definitivas. Esto causa que se pierda la capacidad humana de cuestionar a la máquina por miedo a gastar tiempo, recursos (tokens), o por la presión de complacer a los superiores. Como resultado, se genera una carga y tensión mental grave, más errores laborales y fatiga cognitiva, especialmente cuando los jefes rechazan cualquier idea creativa que contradiga lo que la IA les ha sugerido.\n\nLos modelos de lenguaje manipulan a los usuarios. Las inteligencias artificiales utilizan ciertas palabras y técnicas de forma deliberada para poder satisfacer mejor a las personas.\n\nLa inteligencia artificial puede frenar la innovación en lugar de acelerarla. Aunque las fuentes presentan este factor como el cuarto riesgo principal, el material no profundiza en los detalles exactos de cómo ocurre, indicando que el tema completo se desarrolla en la versión extendida de su podcast\n\nLas fuentes proponen una transformación radical de los medios digitales tradicionales hacia el modelo de una AI Factory, argumentando que la estructura actual de producción de contenido es obsoleta frente al avance de la inteligencia artificial. Se advierte sobre el colapso del internet abierto debido al tráfico sintético y el robo de datos, sugiriendo que el valor futuro residirá en la \"Prueba de Humanidad\" y el licenciamiento de archivos históricos vectorizados. Para sobrevivir, las organizaciones deben abandonar los sistemas de gestión tradicionales y adoptar infraestructuras defensivas que protejan su propiedad intelectual de los rastreadores automatizados. El enfoque estratégico debe desplazarse de la creación artesanal de artículos hacia la orquestación de procesos dirigidos por ingenieros, donde la IA gestiona el volumen transaccional y los humanos actúan como auditores críticos. Finalmente, se plantea que la supervivencia del negocio depende de monetizar el criterio experto y la veracidad, convirtiendo a los medios en refinerías de conocimiento en lugar de simples fábricas de clics.\n",
+      "relatedPdf": null,
+      "hash": "c388aba5b79250357e3ad49c72c4600a3ea3b07e9900c58869aca6d91983dde6",
+      "isAnalysis": true
     },
     {
       "id": "riesgos-ia-ai-workplace-safety-manual",
@@ -1689,7 +2101,8 @@
       "pageCount": 15,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "0fd5fc892c4f29c0ed71521ebaab093e0b742950ed5d7f739a0388e1943f0553"
+      "hash": "0fd5fc892c4f29c0ed71521ebaab093e0b742950ed5d7f739a0388e1943f0553",
+      "isAnalysis": false
     },
     {
       "id": "riesgos-ia-fabricas-de-inteligencia-contra-el-saqueo-algoritmico",
@@ -1718,7 +2131,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "b6291541e52e2a559579135df994fae6c12de4dda874d9ac275c45388296bf75"
+      "hash": "b6291541e52e2a559579135df994fae6c12de4dda874d9ac275c45388296bf75",
+      "isAnalysis": false
     },
     {
       "id": "riesgos-ia-la-era-ai-factory",
@@ -1745,7 +2159,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "1e35d25c49440dcbb42fece722103b33665ca7fbaef460515ba5985ebe303690"
+      "hash": "1e35d25c49440dcbb42fece722103b33665ca7fbaef460515ba5985ebe303690",
+      "isAnalysis": false
     },
     {
       "id": "riesgos-ia-la-era-de-ai-factory",
@@ -1772,7 +2187,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "946d8c39dd841a347bb889ce231431a6a09bcf729dc8710a7a9162fb709104fb"
+      "hash": "946d8c39dd841a347bb889ce231431a6a09bcf729dc8710a7a9162fb709104fb",
+      "isAnalysis": false
     },
     {
       "id": "riesgos-ia-lado-oscuro-de-la-ia",
@@ -1799,7 +2215,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "f33bccd3a7e521f6ebad86a06fb34e23f6245720dafe13dde05eea6b2d4ab2e9"
+      "hash": "f33bccd3a7e521f6ebad86a06fb34e23f6245720dafe13dde05eea6b2d4ab2e9",
+      "isAnalysis": false
     },
     {
       "id": "riesgos-ia-media-intelligence-refinery",
@@ -1828,7 +2245,8 @@
       "pageCount": 17,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "1e487474445c21889911e973f7b3e7169dc4f8480662320225a9f8ab1207ff7c"
+      "hash": "1e487474445c21889911e973f7b3e7169dc4f8480662320225a9f8ab1207ff7c",
+      "isAnalysis": false
     },
     {
       "id": "riesgos-ia-the-intelligence-refinery",
@@ -1856,7 +2274,36 @@
       "pageCount": 18,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "28d6075be4f791afe2cc94d7828ead861dbe906687c49d63c337594ae6a8871a"
+      "hash": "28d6075be4f791afe2cc94d7828ead861dbe906687c49d63c337594ae6a8871a",
+      "isAnalysis": false
+    },
+    {
+      "id": "digital_media-analisis",
+      "collectionId": "digital_media",
+      "title": "Análisis de Medios digitales",
+      "filename": "descripcion.md",
+      "type": "text",
+      "mime": "text/markdown",
+      "url": "./analisis/digital_media/descripcion.md",
+      "downloadUrl": "./analisis/digital_media/descripcion.md",
+      "thumbnail": null,
+      "size": 974,
+      "updatedAt": "2026-08-13T15:58:27.082Z",
+      "tags": [
+        "análisis",
+        "markdown",
+        "medios",
+        "rentabilidad",
+        "estrategia",
+        "audiencia"
+      ],
+      "summary": "Este manual propone una transformación radical para los medios digitales, sugiriendo que abandonen la obsesión por el tráfico masivo para enfocarse en la rentabilidad directa.",
+      "featured": false,
+      "pageCount": null,
+      "textContent": "# Análisis de Medios digitales\n\nEste manual propone una transformación radical para los medios digitales, sugiriendo que abandonen la obsesión por el tráfico masivo para enfocarse en la rentabilidad directa. El enfoque central consiste en identificar los problemas específicos de la audiencia para convertirlos en oportunidades de negocio mediante productos valiosos y transacciones claras. Se recomienda reducir la producción editorial innecesaria para liberar talento humano capaz de construir activos estratégicos, como bases de datos de intención comercial y herramientas de utilidad. El modelo prioriza la captura de usuarios identificados y la venta de soluciones integrales a empresas, superando la dependencia de la publicidad programática tradicional. Finalmente, la estrategia dicta que el desarrollo tecnológico debe estar subordinado a la validación comercial previa, asegurando que cada proyecto genere ingresos o datos accionables antes de escalar.\n",
+      "relatedPdf": null,
+      "hash": "a8c93cdd2899ddf254d68d7007344a4ab28d9bf5b6597e03bb0469aba028d063",
+      "isAnalysis": true
     },
     {
       "id": "digital-media-estrategia-de-rentabilidad-radical",
@@ -1883,7 +2330,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "008c1f753efc20443c51dc9b1b4c58537c6d107be6499145ff85947db16e9506"
+      "hash": "008c1f753efc20443c51dc9b1b4c58537c6d107be6499145ff85947db16e9506",
+      "isAnalysis": false
     },
     {
       "id": "digital-media-vender-intencion-para-salvar-los-medios",
@@ -1912,7 +2360,8 @@
       "pageCount": null,
       "textContent": null,
       "relatedPdf": null,
-      "hash": "086e63bac8b1fb744718c08d59af87460b024ce89c6376089042ca755ac99646"
+      "hash": "086e63bac8b1fb744718c08d59af87460b024ce89c6376089042ca755ac99646",
+      "isAnalysis": false
     }
   ]
 }

@@ -9,6 +9,7 @@ import YAML from 'yaml'
 const root = resolve(import.meta.dirname, '..')
 const publicDir = join(root, 'public')
 const thumbsDir = join(publicDir, 'thumbs')
+const analysesDir = join(publicDir, 'analisis')
 const cacheDir = join(root, '.catalog-cache')
 const taxonomyPath = join(root, 'taxonomy.yml')
 const supported = new Set(['.pdf', '.m4a', '.mp4', '.png', '.txt', '.md', '.docx'])
@@ -35,6 +36,7 @@ const execFileAsync = promisify(execFile)
 
 mkdirSync(publicDir, { recursive: true })
 mkdirSync(thumbsDir, { recursive: true })
+mkdirSync(analysesDir, { recursive: true })
 mkdirSync(cacheDir, { recursive: true })
 
 const taxonomy = YAML.parse(readFileSync(taxonomyPath, 'utf8'))
@@ -84,6 +86,60 @@ function firstParagraph(markdown) {
     .trim()
   const sentence = clean.match(/^.{80,360}?[.!?](?:\s|$)/)?.[0] || clean.slice(0, 300)
   return sentence.trim()
+}
+
+function formatDescriptionMarkdown(markdown, collectionTitle) {
+  const normalized = markdown
+    .replace(/^\uFEFF/, '')
+    .replace(/\r\n?/g, '\n')
+    .replace(/\n[ \t]*([,.;:!?])[ \t]+(?=\S)/g, '$1 ')
+    .replace(/\n[ \t]*([,.;:!?])[ \t]*(?=\n|$)/g, '$1\n\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+
+  const blocks = []
+  let paragraph = []
+  const flushParagraph = () => {
+    if (!paragraph.length) return
+    blocks.push(paragraph.join(' ').replace(/\s+/g, ' ').trim())
+    paragraph = []
+  }
+
+  const logicalLines = []
+  for (const sourceLine of normalized.split('\n')) {
+    const line = sourceLine.trim()
+    const previous = logicalLines.at(-1)
+    if (line && previous && /^[a-záéíóúüñ]/.test(line)) {
+      logicalLines[logicalLines.length - 1] = `${previous} ${line}`
+    } else {
+      logicalLines.push(line)
+    }
+  }
+
+  for (const line of logicalLines) {
+    if (!line) {
+      flushParagraph()
+      continue
+    }
+
+    const wordCount = line.split(/\s+/).length
+    let structuralLine = null
+    if (/^\d+\.\s+\S/.test(line)) structuralLine = `## ${line}`
+    else if (/^#{1,6}\s+/.test(line) || /^[-*+]\s+/.test(line) || /^>\s?/.test(line)) structuralLine = line
+    else if (line.endsWith(':') && wordCount <= 10) structuralLine = `### ${line.slice(0, -1)}`
+    else if (!/[.!?;:]$/.test(line) && wordCount <= 9) structuralLine = `## ${line}`
+
+    if (structuralLine) {
+      flushParagraph()
+      blocks.push(structuralLine)
+    } else {
+      paragraph.push(line.replace(/^([^:]{3,80}):\s+/, '**$1:** '))
+      if (line.endsWith(':')) flushParagraph()
+    }
+  }
+  flushParagraph()
+
+  return [`# Análisis de ${collectionTitle}`, ...blocks].join('\n\n') + '\n'
 }
 
 function inferTags(title, collectionTags, type) {
@@ -239,6 +295,7 @@ for (const [slug, config] of Object.entries(taxonomy.collections)) {
   if (!existsSync(collectionDir)) continue
   const descriptionPath = join(collectionDir, 'descripcion.md')
   const description = existsSync(descriptionPath) ? readFileSync(descriptionPath, 'utf8').trim() : ''
+  const analysisMarkdown = description ? formatDescriptionMarkdown(description, config.title) : ''
   const summary = description ? firstParagraph(description) : `Notas y recursos de ${config.title.toLowerCase()}.`
   const existingOverrides = readResourceOverrides(collectionDir)
   const overridesByFile = new Map(existingOverrides.map((entry) => [entry.file, entry]))
@@ -257,9 +314,43 @@ for (const [slug, config] of Object.entries(taxonomy.collections)) {
     summary,
     tags: config.tags,
     order: config.order,
-    resourceCount: fileNames.length,
+    resourceCount: fileNames.length + (description ? 1 : 0),
   })
   searchEntries.push({ id: `collection:${slug}`, kind: 'collection', collectionId: slug, resourceId: null, page: null, title: config.title, tags: config.tags, text: `${config.title} ${summary} ${description}` })
+
+  if (description) {
+    const analysisId = `${slug}-analisis`
+    const analysisTitle = `Análisis de ${config.title}`
+    const analysisTags = [...new Set(['análisis', 'markdown', ...config.tags])]
+    const analysisDirectory = join(analysesDir, slug)
+    const analysisOutputPath = join(analysisDirectory, 'descripcion.md')
+    const analysisPublicPath = encodePath(`analisis/${slug}/descripcion.md`)
+    mkdirSync(analysisDirectory, { recursive: true })
+    writeFileSync(analysisOutputPath, analysisMarkdown)
+    usedResourceIds.add(analysisId)
+    resources.push({
+      id: analysisId,
+      collectionId: slug,
+      title: analysisTitle,
+      filename: 'descripcion.md',
+      type: 'text',
+      mime: 'text/markdown',
+      url: `./${analysisPublicPath}`,
+      downloadUrl: `./${analysisPublicPath}`,
+      thumbnail: null,
+      size: Buffer.byteLength(analysisMarkdown),
+      updatedAt: statSync(descriptionPath).mtime.toISOString(),
+      tags: analysisTags,
+      summary,
+      featured: false,
+      pageCount: null,
+      textContent: analysisMarkdown,
+      relatedPdf: null,
+      hash: hashFile(descriptionPath),
+      isAnalysis: true,
+    })
+    searchEntries.push({ id: `resource:${analysisId}`, kind: 'resource', collectionId: slug, resourceId: analysisId, page: null, title: analysisTitle, tags: analysisTags, text: analysisMarkdown })
+  }
 
   const pdfByStem = new Map(fileNames.filter((name) => extname(name).toLowerCase() === '.pdf').map((name) => [displayTitle(name).toLowerCase(), join(collectionDir, name)]))
 
@@ -333,6 +424,7 @@ for (const [slug, config] of Object.entries(taxonomy.collections)) {
       textContent,
       relatedPdf,
       hash,
+      isAnalysis: false,
     })
     generatedOverrides.push({ id, file: filename, title, tags, summary: override.summary, featured: override.featured })
 
