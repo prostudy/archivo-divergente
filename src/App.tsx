@@ -19,15 +19,14 @@ import {
   Play,
   RotateCcw,
   RotateCw,
-  Search,
   SlidersHorizontal,
   Sparkles,
+  Trash2,
   Video,
   X,
   ZoomIn,
   ZoomOut,
 } from 'lucide-react'
-import MiniSearch, { type SearchResult } from 'minisearch'
 import type { PDFDocumentProxy } from 'pdfjs-dist'
 import ReactMarkdown from 'react-markdown'
 import type {
@@ -37,7 +36,6 @@ import type {
   Resource,
   ResourceProgress,
   ResourceType,
-  SearchEntry,
   Territory,
 } from './types'
 
@@ -97,17 +95,11 @@ function loadLibraryState(): LibraryState {
       ...stored,
       filters: { ...emptyState.filters, ...stored.filters },
       progress: stored.progress || {},
+      recent: stored.recent || [],
     }
   } catch {
     return emptyState
   }
-}
-
-function normalizeText(value: string) {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
 }
 
 function formatBytes(bytes: number) {
@@ -151,15 +143,13 @@ function LibraryMark() {
 
 function App() {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
-  const [searchEntries, setSearchEntries] = useState<SearchEntry[] | null>(null)
   const [loadError, setLoadError] = useState('')
-  const [query, setQuery] = useState('')
   const [libraryState, setLibraryState] = useState<LibraryState>(loadLibraryState)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [requestedPage, setRequestedPage] = useState<number | null>(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
-  const searchLoadPromise = useRef<Promise<void> | null>(null)
   const lastFocusedElement = useRef<HTMLElement | null>(null)
+  const recentCarouselRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}catalog.json`)
@@ -180,21 +170,6 @@ function App() {
       .catch((error: Error) => setLoadError(error.message))
   }, [])
 
-  const ensureSearchIndex = useCallback(() => {
-    if (searchEntries || searchLoadPromise.current) return searchLoadPromise.current
-    searchLoadPromise.current = fetch(`${import.meta.env.BASE_URL}search-index.json`)
-      .then((response) => response.json())
-      .then((data: { entries: SearchEntry[] }) => setSearchEntries(data.entries))
-      .catch(() => setSearchEntries([]))
-    return searchLoadPromise.current
-  }, [searchEntries])
-
-  useEffect(() => {
-    const load = () => void ensureSearchIndex()
-    const id = window.setTimeout(load, 1500)
-    return () => window.clearTimeout(id)
-  }, [ensureSearchIndex])
-
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(libraryState))
   }, [libraryState])
@@ -212,10 +187,6 @@ function App() {
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === '/' && !['INPUT', 'TEXTAREA'].includes((event.target as HTMLElement).tagName)) {
-        event.preventDefault()
-        document.querySelector<HTMLInputElement>('#library-search')?.focus()
-      }
       if (event.key === 'Escape' && selectedId) closeResource()
     }
     window.addEventListener('keydown', onKeyDown)
@@ -257,53 +228,9 @@ function App() {
     [catalog],
   )
 
-  const miniSearch = useMemo(() => {
-    if (!searchEntries) return null
-    const index = new MiniSearch({
-      fields: ['title', 'tagsText', 'text'],
-      storeFields: ['kind', 'resourceId', 'collectionId', 'page', 'title'],
-      searchOptions: { prefix: true, fuzzy: 0.22, boost: { title: 5, tagsText: 3, text: 1 } },
-      processTerm: (term) => normalizeText(term),
-    })
-    index.addAll(searchEntries.map((entry) => ({ ...entry, tagsText: entry.tags.join(' ') })))
-    return index
-  }, [searchEntries])
-
-  const resultInfo = useMemo(() => {
-    const map = new Map<string, { score: number; page: number | null }>()
-    if (!query.trim() || !catalog) return map
-    let results: SearchResult[] = []
-    if (miniSearch) results = miniSearch.search(query)
-
-    if (!miniSearch) {
-      const normalized = normalizeText(query)
-      for (const resource of catalog.resources) {
-        const haystack = normalizeText(`${resource.title} ${resource.tags.join(' ')} ${resource.summary}`)
-        if (haystack.includes(normalized)) map.set(resource.id, { score: 1, page: null })
-      }
-      return map
-    }
-
-    for (const result of results) {
-      const resourceId = result.resourceId as string | null
-      if (resourceId) {
-        const previous = map.get(resourceId)
-        if (!previous || result.score > previous.score) {
-          map.set(resourceId, { score: result.score, page: (result.page as number | null) || null })
-        }
-      } else if (result.kind === 'collection') {
-        for (const resource of catalog.resources.filter((item) => item.collectionId === result.collectionId)) {
-          if (!map.has(resource.id)) map.set(resource.id, { score: result.score * 0.45, page: null })
-        }
-      }
-    }
-    return map
-  }, [catalog, miniSearch, query])
-
   const visibleResources = useMemo(() => {
     if (!catalog) return []
     return catalog.resources
-      .filter((resource) => !query.trim() || resultInfo.has(resource.id))
       .filter((resource) => {
         const collection = collectionsById.get(resource.collectionId)
         if (libraryState.filters.territory !== 'all' && collection?.territoryId !== libraryState.filters.territory) return false
@@ -313,12 +240,11 @@ function App() {
         return true
       })
       .sort((a, b) => {
-        if (query.trim()) return (resultInfo.get(b.id)?.score || 0) - (resultInfo.get(a.id)?.score || 0)
         const collectionA = collectionsById.get(a.collectionId)
         const collectionB = collectionsById.get(b.collectionId)
         return (collectionA?.order || 0) - (collectionB?.order || 0) || a.title.localeCompare(b.title, 'es')
       })
-  }, [catalog, collectionsById, libraryState.favorites, libraryState.filters, query, resultInfo])
+  }, [catalog, collectionsById, libraryState.favorites, libraryState.filters])
 
   const topTags = useMemo(() => {
     if (!catalog) return []
@@ -330,7 +256,13 @@ function App() {
     return [...counts].sort((a, b) => b[1] - a[1]).slice(0, 12).map(([tag]) => tag)
   }, [catalog])
 
-  const continueResource = libraryState.lastResourceId ? resourcesById.get(libraryState.lastResourceId) : undefined
+  const recentResources = useMemo(
+    () => libraryState.recent
+      .map((resourceId) => resourcesById.get(resourceId))
+      .filter((resource): resource is Resource => Boolean(resource))
+      .slice(0, 10),
+    [libraryState.recent, resourcesById],
+  )
   const selectedResource = selectedId ? resourcesById.get(selectedId) : undefined
 
   useEffect(() => {
@@ -360,8 +292,19 @@ function App() {
     updateState((current) => ({
       ...current,
       lastResourceId: resource.id,
-      recent: [resource.id, ...current.recent.filter((id) => id !== resource.id)].slice(0, 8),
+      recent: [resource.id, ...current.recent.filter((id) => id !== resource.id)].slice(0, 10),
     }))
+  }
+
+  function scrollRecent(direction: -1 | 1) {
+    const carousel = recentCarouselRef.current
+    if (!carousel) return
+    carousel.scrollBy({ left: direction * Math.max(280, carousel.clientWidth * .72), behavior: 'smooth' })
+  }
+
+  function clearRecent() {
+    if (!window.confirm('¿Borrar los recursos recientes? Tu progreso y favoritos se conservarán.')) return
+    updateState((current) => ({ ...current, lastResourceId: null, recent: [] }))
   }
 
   function closeResource() {
@@ -444,46 +387,34 @@ function App() {
           </div>
         </section>
 
-        <section className="search-zone" aria-label="Buscar en la biblioteca">
-          <div className="search-box">
-            <Search size={22} aria-hidden="true" />
-            <input
-              id="library-search"
-              type="search"
-              value={query}
-              onChange={(event) => { setQuery(event.target.value); void ensureSearchIndex() }}
-              onFocus={() => void ensureSearchIndex()}
-              placeholder="Busca una idea, palabra o tema…"
-              autoComplete="off"
-            />
-            {query ? (
-              <button type="button" onClick={() => setQuery('')} aria-label="Limpiar búsqueda"><X size={17} /></button>
-            ) : <kbd>/</kbd>}
-          </div>
-          <div className="quick-tags" aria-label="Etiquetas frecuentes">
-            <span>Explorar:</span>
-            {topTags.slice(0, 5).map((tag) => (
-              <button key={tag} type="button" className={libraryState.filters.tag === tag ? 'active' : ''} onClick={() => setFilter('tag', libraryState.filters.tag === tag ? 'all' : tag)}>{tag}</button>
-            ))}
-          </div>
-        </section>
-
-        {continueResource && (
+        {recentResources.length > 0 && (
           <section className="continue-section" aria-labelledby="continue-title">
-            <div className="section-heading">
+            <div className="section-heading continue-heading">
               <div>
-                <p className="eyebrow"><Clock3 size={13} /> Tu última huella</p>
+                <p className="eyebrow"><Clock3 size={13} /> Tus últimas huellas</p>
                 <h2 id="continue-title">Continúa donde estabas</h2>
               </div>
-              <p>Tu progreso vive sólo en este dispositivo.</p>
+              <div className="continue-heading-actions">
+                <span>{recentResources.length} {recentResources.length === 1 ? 'recurso reciente' : 'recursos recientes'}</span>
+                <div className="continue-carousel-controls" aria-label="Controles del historial reciente">
+                  <button type="button" onClick={() => scrollRecent(-1)} disabled={recentResources.length < 2} aria-label="Ver recursos anteriores"><ChevronLeft size={17} /></button>
+                  <button type="button" onClick={() => scrollRecent(1)} disabled={recentResources.length < 2} aria-label="Ver recursos siguientes"><ChevronRight size={17} /></button>
+                </div>
+                <button className="clear-recent" type="button" onClick={clearRecent}><Trash2 size={14} /> Borrar historial</button>
+              </div>
             </div>
-            <ContinueCard
-              resource={continueResource}
-              collection={collectionsById.get(continueResource.collectionId)!}
-              territory={territoriesById.get(collectionsById.get(continueResource.collectionId)!.territoryId)!}
-              progress={libraryState.progress[continueResource.id]}
-              onOpen={() => openResource(continueResource)}
-            />
+            <div className="continue-carousel" ref={recentCarouselRef} role="group" aria-label="Últimos recursos consultados">
+              {recentResources.map((resource) => (
+                <ContinueCard
+                  key={resource.id}
+                  resource={resource}
+                  collection={collectionsById.get(resource.collectionId)!}
+                  territory={territoriesById.get(collectionsById.get(resource.collectionId)!.territoryId)!}
+                  progress={libraryState.progress[resource.id]}
+                  onOpen={() => openResource(resource)}
+                />
+              ))}
+            </div>
           </section>
         )}
 
@@ -517,7 +448,7 @@ function App() {
           <div className="section-heading library-heading">
             <div>
               <p className="eyebrow">La biblioteca viva</p>
-              <h2 id="library-title">{query ? `Resultados para “${query}”` : 'Todo lo que has reunido'}</h2>
+              <h2 id="library-title">Todo lo que has reunido</h2>
             </div>
             <div className="view-switch" aria-label="Cambiar vista">
               <button type="button" className={libraryState.filters.viewMode === 'board' ? 'active' : ''} onClick={() => setFilter('viewMode', 'board')} aria-label="Vista de tablero"><Grid2X2 size={17} /></button>
@@ -536,7 +467,6 @@ function App() {
 
           <p className="result-count" aria-live="polite">
             {visibleResources.length} {visibleResources.length === 1 ? 'recurso' : 'recursos'}
-            {query && !searchEntries ? ' · buscando también dentro de los documentos…' : ''}
           </p>
 
           {visibleResources.length ? (
@@ -549,7 +479,7 @@ function App() {
                   territory={territoriesById.get(collectionsById.get(resource.collectionId)!.territoryId)!}
                   progress={libraryState.progress[resource.id]}
                   favorite={libraryState.favorites.includes(resource.id)}
-                  searchPage={resultInfo.get(resource.id)?.page || null}
+                  searchPage={null}
                   index={index}
                   viewMode={libraryState.filters.viewMode}
                   onOpen={(page) => openResource(resource, page)}
@@ -559,10 +489,10 @@ function App() {
             </div>
           ) : (
             <div className="empty-results">
-              <Search size={25} />
-              <h3>No apareció esa conexión.</h3>
-              <p>Prueba una palabra más breve o limpia los filtros para abrir otros caminos.</p>
-              <button type="button" onClick={() => { setQuery(''); updateState((current) => ({ ...current, filters: emptyState.filters })) }}>Ver toda la biblioteca</button>
+              <RotateCcw size={25} />
+              <h3>No hay recursos con estos filtros.</h3>
+              <p>Limpia los filtros para volver a ver toda la biblioteca.</p>
+              <button type="button" onClick={() => updateState((current) => ({ ...current, filters: emptyState.filters }))}>Ver toda la biblioteca</button>
             </div>
           )}
         </section>
@@ -621,7 +551,7 @@ function ContinueCard({ resource, collection, territory, progress, onOpen }: {
         <span className="continue-play"><Play size={17} fill="currentColor" /></span>
       </div>
       <div className="continue-copy">
-        <span className="resource-meta"><Icon size={13} /> {typeLabels[resource.type]} · {collection.title}</span>
+        <span className="resource-meta"><Icon size={13} /> {resource.isAnalysis ? 'Análisis' : typeLabels[resource.type]} · {collection.title}</span>
         <h3>{resource.title}</h3>
         <p>{resource.summary}</p>
         <div className="progress-row"><span><Clock3 size={13} /> {resumeLabel}</span><strong>Continuar <ChevronRight size={15} /></strong></div>
