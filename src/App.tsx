@@ -333,6 +333,21 @@ function App() {
   const continueResource = libraryState.lastResourceId ? resourcesById.get(libraryState.lastResourceId) : undefined
   const selectedResource = selectedId ? resourcesById.get(selectedId) : undefined
 
+  useEffect(() => {
+    const viewerOpen = Boolean(selectedResource)
+    document.documentElement.classList.toggle('viewer-open', viewerOpen)
+    document.body.classList.toggle('viewer-open', viewerOpen)
+
+    if (viewerOpen && window.scrollX !== 0) {
+      window.scrollTo({ left: 0, top: window.scrollY, behavior: 'auto' })
+    }
+
+    return () => {
+      document.documentElement.classList.remove('viewer-open')
+      document.body.classList.remove('viewer-open')
+    }
+  }, [selectedResource])
+
   function openResource(resource: Resource, page: number | null = null) {
     lastFocusedElement.current = document.activeElement as HTMLElement | null
     const params = new URLSearchParams(window.location.search)
