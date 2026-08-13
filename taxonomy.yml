@@ -1,0 +1,103 @@
+site:
+  title: Archivo Divergente
+  tagline: Ideas para volver a lo que importa
+  mediaBaseUrl: https://agilpm.com/conocimiento
+  downloadBaseUrl: https://agilpm.com/conocimiento/download.php
+
+territories:
+  - id: vida-agencia
+    title: Vida y agencia
+    eyebrow: Volver a ti
+    description: Calma, identidad y decisiones para recuperar movimiento.
+    accent: sage
+    order: 1
+  - id: negocio-oficio
+    title: Negocio y oficio
+    eyebrow: Hacer que importe
+    description: Crear valor, proteger el trabajo y convertir ideas en sistemas.
+    accent: clay
+    order: 2
+  - id: sistemas-decisiones
+    title: Sistemas y decisiones
+    eyebrow: Ver lo invisible
+    description: Modelos para comprender el cambio, el riesgo y la conducta.
+    accent: blue
+    order: 3
+  - id: ia-medios
+    title: IA y medios
+    eyebrow: Pensar el futuro
+    description: Tecnología, criterio humano y nuevas arquitecturas de conocimiento.
+    accent: plum
+    order: 4
+
+collections:
+  control:
+    title: Control
+    territory: vida-agencia
+    tags: [agencia, acción, consistencia, calma]
+    order: 1
+  preocupacion:
+    title: Preocupación
+    territory: vida-agencia
+    tags: [ansiedad, calma, presente, bienestar]
+    order: 2
+  pick_yourself:
+    title: Elegirte
+    territory: vida-agencia
+    tags: [agencia, creatividad, iniciativa, Seth Godin]
+    order: 3
+  ser_tu_mismo:
+    title: Ser tú mismo
+    territory: vida-agencia
+    tags: [identidad, crecer, familia, límites]
+    order: 4
+  reflexiones:
+    title: Reflexiones
+    territory: vida-agencia
+    tags: [ideas, notas, contemplación]
+    order: 5
+  crear_negocios:
+    title: Crear negocios
+    territory: negocio-oficio
+    tags: [negocios, confianza, marketing, valor]
+    order: 1
+  freelance:
+    title: Freelance
+    territory: negocio-oficio
+    tags: [freelance, contratos, México, protección]
+    order: 2
+  payme:
+    title: Cobros y contratos
+    territory: negocio-oficio
+    tags: [cobros, contratos, propiedad intelectual]
+    order: 3
+  plan_maestro:
+    title: Plan maestro
+    territory: negocio-oficio
+    tags: [arquitectura, IA, producto, estrategia]
+    order: 4
+  game_theory:
+    title: Teoría de juegos
+    territory: sistemas-decisiones
+    tags: [decisiones, estrategia, cooperación, incentivos]
+    order: 1
+  paradoja_probabilidad:
+    title: Probabilidad y paradojas
+    territory: sistemas-decisiones
+    tags: [probabilidad, incertidumbre, decisiones, IA]
+    order: 2
+  divergencia:
+    title: Divergencia
+    territory: sistemas-decisiones
+    tags: [cambio, conducta, organizaciones, liderazgo]
+    order: 3
+  riesgos_ia:
+    title: Riesgos de la IA
+    territory: ia-medios
+    tags: [IA, trabajo, criterio, seguridad]
+    order: 1
+  digital_media:
+    title: Medios digitales
+    territory: ia-medios
+    tags: [medios, rentabilidad, estrategia, audiencia]
+    order: 2

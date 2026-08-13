@@ -1,0 +1,35 @@
+resources:
+  - id: plan-maestro-agente-el-arquitecto
+    file: Agente_El_Arquitecto.mp4
+    title: Agente El Arquitecto
+    tags:
+      - arquitectura
+      - IA
+      - producto
+      - estrategia
+      - video
+      - agente
+      - arquitecto
+  - id: plan-maestro-el-arquitecto-blueprint
+    file: El_Arquitecto_Blueprint.pdf
+    title: El Arquitecto Blueprint
+    tags:
+      - arquitectura
+      - IA
+      - producto
+      - estrategia
+      - pdf
+      - arquitecto
+      - blueprint
+  - id: plan-maestro-el-arquitecto-jubila-el-plan-de-negocio
+    file: El_Arquitecto_jubila_el_plan_de_negocio.m4a
+    title: El Arquitecto jubila el plan de negocio
+    tags:
+      - arquitectura
+      - IA
+      - producto
+      - estrategia
+      - audio
+      - arquitecto
+      - jubila
+      - negocio

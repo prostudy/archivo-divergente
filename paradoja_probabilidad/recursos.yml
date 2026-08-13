@@ -1,0 +1,33 @@
+resources:
+  - id: paradoja-probabilidad-ia-y-el-fin-del-manager
+    file: IA_y_el_fin_del_mánager.m4a
+    title: IA y el fin del mánager
+    tags:
+      - probabilidad
+      - incertidumbre
+      - decisiones
+      - IA
+      - audio
+      - manager
+  - id: paradoja-probabilidad-ia-y-la-trampa-de-lo-probable
+    file: IA_y_la_trampa_de_lo_probable.m4a
+    title: IA y la trampa de lo probable
+    tags:
+      - probabilidad
+      - incertidumbre
+      - decisiones
+      - IA
+      - audio
+      - trampa
+      - probable
+  - id: paradoja-probabilidad-the-probability-paradox
+    file: The_Probability_Paradox.pdf
+    title: The Probability Paradox
+    tags:
+      - probabilidad
+      - incertidumbre
+      - decisiones
+      - IA
+      - pdf
+      - probability
+      - paradox

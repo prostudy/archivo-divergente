@@ -1,0 +1,10 @@
+resources:
+  - id: reflexiones-planetas
+    file: planetas.txt
+    title: planetas
+    tags:
+      - ideas
+      - notas
+      - contemplación
+      - text
+      - planetas

@@ -1,0 +1,23 @@
+resources:
+  - id: digital-media-estrategia-de-rentabilidad-radical
+    file: Estrategia_de_Rentabilidad_Radical.png
+    title: Estrategia de Rentabilidad Radical
+    tags:
+      - medios
+      - rentabilidad
+      - estrategia
+      - audiencia
+      - image
+      - radical
+  - id: digital-media-vender-intencion-para-salvar-los-medios
+    file: Vender_intención_para_salvar_los_medios.m4a
+    title: Vender intención para salvar los medios
+    tags:
+      - medios
+      - rentabilidad
+      - estrategia
+      - audiencia
+      - audio
+      - vender
+      - intencion
+      - salvar

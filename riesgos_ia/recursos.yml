@@ -1,0 +1,78 @@
+resources:
+  - id: riesgos-ia-ai-workplace-safety-manual
+    file: AI_Workplace_Safety_Manual.pdf
+    title: AI Workplace Safety Manual
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - pdf
+      - workplace
+      - safety
+      - manual
+  - id: riesgos-ia-fabricas-de-inteligencia-contra-el-saqueo-algoritmico
+    file: Fábricas_de_inteligencia_contra_el_saqueo_algorítmico.m4a
+    title: Fábricas de inteligencia contra el saqueo algorítmico
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - audio
+      - fabricas
+      - inteligencia
+      - contra
+  - id: riesgos-ia-la-era-ai-factory
+    file: La_Era_AI_Factory.mp4
+    title: La Era AI Factory
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - video
+      - factory
+  - id: riesgos-ia-la-era-de-ai-factory
+    file: La_era_de_AI_Factory.png
+    title: La era de AI Factory
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - image
+      - factory
+  - id: riesgos-ia-lado-oscuro-de-la-ia
+    file: Lado_Oscuro_de_la_IA.png
+    title: Lado Oscuro de la IA
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - image
+      - oscuro
+  - id: riesgos-ia-media-intelligence-refinery
+    file: Media_Intelligence_Refinery.pdf
+    title: Media Intelligence Refinery
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - pdf
+      - media
+      - intelligence
+      - refinery
+  - id: riesgos-ia-the-intelligence-refinery
+    file: The_Intelligence_Refinery.pdf
+    title: The Intelligence Refinery
+    tags:
+      - IA
+      - trabajo
+      - criterio
+      - seguridad
+      - pdf
+      - intelligence
+      - refinery

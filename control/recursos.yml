@@ -1,0 +1,80 @@
+resources:
+  - id: control-controlarlo-todo-solo-te-garantiza-panico
+    file: Controlarlo_todo_solo_te_garantiza_pánico.m4a
+    title: Controlarlo todo solo te garantiza pánico
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - audio
+      - controlarlo
+      - garantiza
+      - panico
+  - id: control-diez-veranos-para-emprender-en-pareja
+    file: Diez_veranos_para_emprender_en_pareja.m4a
+    title: Diez veranos para emprender en pareja
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - audio
+      - veranos
+      - emprender
+      - pareja
+  - id: control-domina-tu-vida-con-calma-matematica
+    file: Domina_tu_vida_con_calma_matemática.m4a
+    title: Domina tu vida con calma matemática
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - audio
+      - domina
+      - matematica
+  - id: control-el-videojuego-de-tu-vida
+    file: El_Videojuego_de_tu_Vida.pdf
+    title: El Videojuego de tu Vida
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - pdf
+      - videojuego
+  - id: control-guia-radical-para-el-futuro
+    file: Guía_radical_para_el_futuro.png
+    title: Guía radical para el futuro
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - image
+      - radical
+      - futuro
+  - id: control-mastering-control
+    file: Mastering_Control.pdf
+    title: Mastering Control
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - pdf
+      - mastering
+      - control
+  - id: control-resiliencia-estoica-para-ninos-de-ocho-anos
+    file: Resiliencia_estoica_para_niños_de_ocho_años.m4a
+    title: Resiliencia estoica para niños de ocho años
+    tags:
+      - agencia
+      - acción
+      - consistencia
+      - calma
+      - audio
+      - resiliencia
+      - estoica
+      - ninos

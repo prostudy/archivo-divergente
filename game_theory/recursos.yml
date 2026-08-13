@@ -1,0 +1,25 @@
+resources:
+  - id: game-theory-teoria-de-juegos-en-interacciones
+    file: Teoría_de_juegos_en_interacciones.png
+    title: Teoría de juegos en interacciones
+    tags:
+      - decisiones
+      - estrategia
+      - cooperación
+      - incentivos
+      - image
+      - teoria
+      - juegos
+      - interacciones
+  - id: game-theory-trampas-matematicas-de-nuestra-logica-individual
+    file: Trampas_matemáticas_de_nuestra_lógica_individual.m4a
+    title: Trampas matemáticas de nuestra lógica individual
+    tags:
+      - decisiones
+      - estrategia
+      - cooperación
+      - incentivos
+      - audio
+      - trampas
+      - matematicas
+      - nuestra

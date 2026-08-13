@@ -1,0 +1,36 @@
+resources:
+  - id: divergencia-direct-the-rider-and-motivate-the-elephant
+    file: Direct_the_Rider_and_Motivate_the_Elephant.m4a
+    title: Direct the Rider and Motivate the Elephant
+    tags:
+      - cambio
+      - conducta
+      - organizaciones
+      - liderazgo
+      - audio
+      - direct
+      - rider
+      - motivate
+  - id: divergencia-el-jinete-el-elefante-y-el-camino
+    file: El_jinete_el_elefante_y_el_camino.m4a
+    title: El jinete el elefante y el camino
+    tags:
+      - cambio
+      - conducta
+      - organizaciones
+      - liderazgo
+      - audio
+      - jinete
+      - elefante
+      - camino
+  - id: divergencia-gestion-del-cambio-divergente
+    file: Gestión_del_Cambio_Divergente.png
+    title: Gestión del Cambio Divergente
+    tags:
+      - cambio
+      - conducta
+      - organizaciones
+      - liderazgo
+      - image
+      - gestion
+      - divergente

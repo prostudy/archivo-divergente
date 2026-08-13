@@ -1,0 +1,23 @@
+resources:
+  - id: ser-tu-mismo-tu-aventura-de-crecer
+    file: ¡Tu_Aventura_de_Crecer!.png
+    title: ¡Tu Aventura de Crecer!
+    tags:
+      - identidad
+      - crecer
+      - familia
+      - límites
+      - image
+      - aventura
+  - id: ser-tu-mismo-cinco-ninos-al-mando-de-un-avion
+    file: Cinco_niños_al_mando_de_un_avión.m4a
+    title: Cinco niños al mando de un avión
+    tags:
+      - identidad
+      - crecer
+      - familia
+      - límites
+      - audio
+      - cinco
+      - ninos
+      - mando

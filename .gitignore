@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.DS_Store
+.env
+.env.local
+.catalog-cache/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+*.pdf
+*.m4a
+*.mp4
+*.png
+*.docx
+!public/*.png
+!public/thumbs/*.png
+!public/thumbs/*.webp

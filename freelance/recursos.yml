@@ -1,0 +1,47 @@
+resources:
+  - id: freelance-blindaje-legal-para-servicios-profesionales-independientes
+    file: Blindaje_legal_para_servicios_profesionales_independientes.m4a
+    title: Blindaje legal para servicios profesionales independientes
+    tags:
+      - freelance
+      - contratos
+      - México
+      - protección
+      - audio
+      - blindaje
+      - legal
+      - servicios
+  - id: freelance-contrato-servicios-profesionales-freelance-mexico
+    file: Contrato_servicios_profesionales_freelance_Mexico.docx
+    title: Contrato servicios profesionales freelance Mexico
+    tags:
+      - freelance
+      - contratos
+      - México
+      - protección
+      - document
+      - contrato
+      - servicios
+      - profesionales
+  - id: freelance-contrato-servicios-profesionales-freelance-mexico-pdf
+    file: Contrato_servicios_profesionales_freelance_Mexico.pdf
+    title: Contrato servicios profesionales freelance Mexico
+    tags:
+      - freelance
+      - contratos
+      - México
+      - protección
+      - pdf
+      - contrato
+      - servicios
+      - profesionales
+  - id: freelance-guia-para-contratos-freelance-mexico
+    file: Guía_para_contratos_freelance_México.png
+    title: Guía para contratos freelance México
+    tags:
+      - freelance
+      - contratos
+      - México
+      - protección
+      - image
+      - mexico

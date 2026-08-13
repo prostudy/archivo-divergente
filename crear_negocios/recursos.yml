@@ -1,0 +1,182 @@
+resources:
+  - id: crear-negocios-business-engineering-blueprint
+    file: Business_Engineering_Blueprint.pdf
+    title: Business Engineering Blueprint
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - pdf
+      - business
+      - engineering
+      - blueprint
+  - id: crear-negocios-cambio-en-trabajo-moderno
+    file: Cambio_en_Trabajo_Moderno.mp4
+    title: Cambio en Trabajo Moderno
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - video
+      - cambio
+      - trabajo
+      - moderno
+  - id: crear-negocios-ciclo-de-la-confianza-absoluta
+    file: Ciclo_de_la_Confianza_Absoluta.png
+    title: Ciclo de la Confianza Absoluta
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - image
+      - ciclo
+      - absoluta
+  - id: crear-negocios-como-ganar-la-confianza-absoluta-del-cliente
+    file: Cómo_ganar_la_confianza_absoluta_del_cliente.m4a
+    title: Cómo ganar la confianza absoluta del cliente
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - audio
+      - ganar
+      - absoluta
+  - id: crear-negocios-como-validar-tu-negocio-segun-kaufman
+    file: Cómo_validar_tu_negocio_según_Kaufman.m4a
+    title: Cómo validar tu negocio según Kaufman
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - audio
+      - validar
+      - negocio
+      - kaufman
+  - id: crear-negocios-crea-valor-extraordinario-y-blinda-tu-negocio
+    file: Crea_valor_extraordinario_y_blinda_tu_negocio.m4a
+    title: Crea valor extraordinario y blinda tu negocio
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - audio
+      - extraordinario
+      - blinda
+  - id: crear-negocios-engineering-trust
+    file: Engineering_Trust.pdf
+    title: Engineering Trust
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - pdf
+      - engineering
+      - trust
+  - id: crear-negocios-guia-para-crear-negocios-valiosos
+    file: Guía_para_crear_negocios_valiosos.png
+    title: Guía para crear negocios valiosos
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - image
+      - crear
+      - valiosos
+  - id: crear-negocios-la-receta-de-seth-godin-para-triunfar
+    file: La_receta_de_Seth_Godin_para_triunfar.m4a
+    title: La receta de Seth Godin para triunfar
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - audio
+      - receta
+      - godin
+      - triunfar
+  - id: crear-negocios-las-5-piezas-del-negocio
+    file: Las_5_piezas_del_negocio.png
+    title: Las 5 piezas del negocio
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - image
+      - piezas
+      - negocio
+  - id: crear-negocios-los-cinco-pilares-de-cualquier-negocio
+    file: Los_cinco_pilares_de_cualquier_negocio.m4a
+    title: Los cinco pilares de cualquier negocio
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - audio
+      - cinco
+      - pilares
+      - cualquier
+  - id: crear-negocios-marketing-humano-de-seth-godin
+    file: Marketing_Humano_de_Seth_Godin.png
+    title: Marketing Humano de Seth Godin
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - image
+      - humano
+      - godin
+  - id: crear-negocios-por-que-rechazar-clientes-es-rentable
+    file: Por_qué_rechazar_clientes_es_rentable.m4a
+    title: Por qué rechazar clientes es rentable
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - audio
+      - rechazar
+      - clientes
+      - rentable
+  - id: crear-negocios-the-ai-artisan
+    file: The_AI_Artisan (1).pdf
+    title: The AI Artisan
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - pdf
+      - artisan
+  - id: crear-negocios-the-divergent-playbook
+    file: The_Divergent_Playbook.pdf
+    title: The Divergent Playbook
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - pdf
+      - divergent
+      - playbook
+  - id: crear-negocios-the-professional-shield
+    file: The_Professional_Shield.pdf
+    title: The Professional Shield
+    tags:
+      - negocios
+      - confianza
+      - marketing
+      - valor
+      - pdf
+      - professional
+      - shield

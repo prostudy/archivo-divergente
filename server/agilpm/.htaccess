@@ -1,0 +1,24 @@
+Options -Indexes
+
+<IfModule mod_mime.c>
+  AddType application/pdf .pdf
+  AddType audio/mp4 .m4a
+  AddType video/mp4 .mp4
+  AddType image/png .png
+  AddType text/plain .txt
+  AddType application/vnd.openxmlformats-officedocument.wordprocessingml.document .docx
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Access-Control-Allow-Origin "*"
+  Header always set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+  Header always set Access-Control-Allow-Headers "Range"
+  Header always set Access-Control-Expose-Headers "Accept-Ranges, Content-Length, Content-Range, Content-Type"
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} =OPTIONS
+  RewriteRule ^ - [R=204,L]
+</IfModule>

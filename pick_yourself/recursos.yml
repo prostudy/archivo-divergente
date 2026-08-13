@@ -1,0 +1,34 @@
+resources:
+  - id: pick-yourself-crear-una-vida-que-importe
+    file: Crear_una_vida_que_importe.png
+    title: Crear una vida que importe
+    tags:
+      - agencia
+      - creatividad
+      - iniciativa
+      - Seth Godin
+      - image
+      - crear
+      - importe
+  - id: pick-yourself-stop-hiding-and-merely-ship-it
+    file: Stop_hiding_and_merely_ship_it.m4a
+    title: Stop hiding and merely ship it
+    tags:
+      - agencia
+      - creatividad
+      - iniciativa
+      - Seth Godin
+      - audio
+      - hiding
+      - merely
+  - id: pick-yourself-the-agency-blueprint
+    file: The_Agency_Blueprint.pdf
+    title: The Agency Blueprint
+    tags:
+      - agencia
+      - creatividad
+      - iniciativa
+      - Seth Godin
+      - pdf
+      - agency
+      - blueprint

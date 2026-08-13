@@ -1,0 +1,34 @@
+resources:
+  - id: preocupacion-guia-para-manejar-la-preocupacion
+    file: Guía_para_manejar_la_preocupación.png
+    title: Guía para manejar la preocupación
+    tags:
+      - ansiedad
+      - calma
+      - presente
+      - bienestar
+      - image
+      - manejar
+      - preocupacion
+  - id: preocupacion-stop-loss-emocional-desactiva-la-preocupacion-y-empieza-a-vivi
+    file: Stop-Loss_Emocional__Desactiva_la_Preocupación_y_Empieza_a_Vivi.m4a
+    title: Stop Loss Emocional Desactiva la Preocupación y Empieza a Vivi
+    tags:
+      - ansiedad
+      - calma
+      - presente
+      - bienestar
+      - audio
+      - emocional
+      - desactiva
+      - preocupacion
+  - id: preocupacion-the-calm-mind-blueprint
+    file: The_Calm_Mind_Blueprint.pdf
+    title: The Calm Mind Blueprint
+    tags:
+      - ansiedad
+      - calma
+      - presente
+      - bienestar
+      - pdf
+      - blueprint

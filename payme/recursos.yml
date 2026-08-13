@@ -1,0 +1,33 @@
+resources:
+  - id: payme-blindaje-legal-para-asegurar-tus-cobros
+    file: Blindaje_legal_para_asegurar_tus_cobros.m4a
+    title: Blindaje legal para asegurar tus cobros
+    tags:
+      - cobros
+      - contratos
+      - propiedad intelectual
+      - audio
+      - blindaje
+      - legal
+      - asegurar
+  - id: payme-el-negocio-del-diseno-contratos
+    file: El_negocio_del_diseño__Contratos.png
+    title: El negocio del diseño Contratos
+    tags:
+      - cobros
+      - contratos
+      - propiedad intelectual
+      - image
+      - negocio
+      - diseno
+  - id: payme-the-creative-structural-blueprint
+    file: The_Creative_Structural_Blueprint.pdf
+    title: The Creative Structural Blueprint
+    tags:
+      - cobros
+      - contratos
+      - propiedad intelectual
+      - pdf
+      - creative
+      - structural
+      - blueprint
